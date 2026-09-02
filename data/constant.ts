@@ -443,3 +443,53 @@ export const CUSTOM_WORKFLOW = [
             "حفاظتی قدرتی آئل یا بیرونی پولی یوریتھین لگانے سے پہلے نقش کاری کو باریک ہاتھ سے سینڈ کرکے مکمل ہموار فنش دیا جاتا ہے۔",
     },
 ];
+export const GALLERY_ITEMS = [
+    {
+        id: "arabesque-teak-main-portal",
+        title: "Arabesque Teak Main Portal",
+        titleUr: "عربیسک ساگوان کا مرکزی داخلی دروازہ",
+        category: "Doors",
+        categoryUr: "دروازے",
+        pattern: "lattice",
+    },
+    {
+        id: "concentric-oak-ceiling-rose",
+        title: "Concentric Oak Ceiling Rose",
+        titleUr: "مرتکز اوک سیلنگ روز",
+        category: "Ceilings",
+        categoryUr: "چھتیں",
+        pattern: "rose",
+    },
+    {
+        id: "fluid-wave-wall-diffuser",
+        title: "Fluid Wave Wall Diffuser",
+        titleUr: "فلوئڈ ویو وال ڈفیوزر",
+        category: "Panels",
+        categoryUr: "پینلز",
+        pattern: "waves",
+    },
+    {
+        id: "radial-walnut-accent-mirror",
+        title: "Radial Walnut Accent Mirror",
+        titleUr: "ریڈیل وال نٹ ایکسنٹ آئینہ",
+        category: "Mirrors",
+        categoryUr: "آئینے",
+        pattern: "radial",
+    },
+    {
+        id: "cedar-pierced-fretwork-screen",
+        title: "Cedar Pierced Fretwork Screen",
+        titleUr: "سیڈر پیئرسڈ فریٹ ورک اسکرین",
+        category: "Windows",
+        categoryUr: "کھڑکیاں",
+        pattern: "fretwork",
+    },
+    {
+        id: "parametric-acoustic-auditorium-wall",
+        title: "Parametric Acoustic Auditorium Wall",
+        titleUr: "پیرامیٹرک ایکوسٹک آڈیٹوریم وال",
+        category: "Panels",
+        categoryUr: "پینلز",
+        pattern: "parametric",
+    },
+];
