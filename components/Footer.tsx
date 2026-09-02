@@ -10,6 +10,7 @@ import {
     Compass,
     Sliders,
 } from "lucide-react";
+import Image from "next/image";
 
 type FooterProps = {
     locale: Locale;
@@ -89,7 +90,7 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Brand Intro */}
                     <div className="md:col-span-4 space-y-4">
-                        <div className="flex items-center gap-3">
+                        {/* <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-sm bg-amber-700 text-stone-50 flex items-center justify-center font-serif font-bold text-lg">
                                 C
                             </div>
@@ -97,8 +98,14 @@ export default function Footer({ locale }: FooterProps) {
                             <span className="font-serif text-lg font-bold text-white tracking-tight uppercase">
                                 TimberCraft
                             </span>
-                        </div>
-
+                        </div> */}
+                        <Image
+                            src="/hussain-sons-v2.png"
+                            alt="Hussain & Sons Logo"
+                            width={200}
+                            height={50}
+                        // className="w-full max-w-[160px] h-auto"
+                        />
                         <p className="text-xs leading-relaxed text-stone-400">
                             Premium architectural CNC wood crafting mill. Creating
                             ready-to-ship relief mirror frames, decorative clocks, custom
@@ -180,7 +187,7 @@ export default function Footer({ locale }: FooterProps) {
 
                 <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500">
                     <span>
-                        © {new Date().getFullYear()} TimberCraft CNC Woodworking. All
+                        © {new Date().getFullYear()} Hussain & Sons CNC Wood Crafting. All
                         rights reserved.
                     </span>
 

@@ -79,5 +79,11 @@
     "noMatchingProducts": "No matching CNC products found",
     "adjustProductFilters": "Try adjusting your category filter or search terms.",
     "dimensions": "Dimensions",
-    "finish": "Finish"
+    "finish": "Finish",
+    "backToProducts": "Back to Products Catalog",
+    "standardTimber": "Standard Timber",
+    "defaultDimensions": "Default Dimensions",
+    "protectiveCoating": "Protective Coating",
+    "engineeringFeatures": "Engineering Features",
+    "customScalingHint": "Need custom dimensions or a different wood species? Click above to request custom scaling."
 }

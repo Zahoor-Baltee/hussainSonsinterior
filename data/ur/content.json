@@ -79,5 +79,11 @@
     "noMatchingProducts": "کوئی مطابقت رکھنے والی CNC مصنوعات نہیں ملیں",
     "adjustProductFilters": "کیٹیگری فلٹر یا تلاش کے الفاظ تبدیل کرکے دوبارہ کوشش کریں۔",
     "dimensions": "پیمائش",
-    "finish": "فنش"
+    "finish": "فنش",
+    "backToProducts": "مصنوعات کے کیٹلاگ پر واپس جائیں",
+    "standardTimber": "معیاری لکڑی",
+    "defaultDimensions": "طے شدہ پیمائش",
+    "protectiveCoating": "حفاظتی کوٹنگ",
+    "engineeringFeatures": "انجینئرنگ خصوصیات",
+    "customScalingHint": "کیا آپ کو حسب ضرورت پیمائش یا لکڑی کی مختلف قسم درکار ہے؟ حسب ضرورت پیمائش کی درخواست کے لیے اوپر کلک کریں۔"
 }
