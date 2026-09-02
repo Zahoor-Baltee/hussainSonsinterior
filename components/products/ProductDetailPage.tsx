@@ -8,20 +8,18 @@ import { CATEGORIES, PRODUCTS } from "@/data/constant";
 import { CNCWoodGraphic } from "@/components/home/CNCWoodGraphic";
 
 type ProductDetailPageProps = {
-    params: Promise<{
-        locale: Locale;
-        id: string;
-    }>;
+    locale: Locale;
+    product: any;
+    t: ReturnType<typeof getContent>;
 };
 
 export default async function ProductDetailPage({
-    params,
+    locale,
+    product,
+    t,
 }: ProductDetailPageProps) {
-    const { locale, id } = await params;
 
-    const t = getContent(locale);
 
-    const product = PRODUCTS.find((prod) => prod.id === id);
 
     if (!product) {
         notFound();
@@ -144,7 +142,7 @@ export default async function ProductDetailPage({
                         </h4>
 
                         <ul className="space-y-1.5">
-                            {features?.map((feature, index) => (
+                            {features?.map((feature: any, index: number) => (
                                 <li
                                     key={index}
                                     className="flex items-center gap-2 text-xs text-stone-500"

@@ -10,13 +10,16 @@ import { CNCWoodGraphic } from "../home/CNCWoodGraphic";
 type ProductsPageProps = {
     locale: string;
     t: any;
+    initialCategory?: string;
 };
 
 export default function ProductsPage({
     locale,
     t,
+    initialCategory,
 }: ProductsPageProps) {
-    const [selectedCategory, setSelectedCategory] = useState("all");
+
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory || "all");
     const [searchQuery, setSearchQuery] = useState("");
 
     const filteredProducts = useMemo(() => {
@@ -77,16 +80,16 @@ export default function ProductsPage({
                     </button>
 
                     {CATEGORIES.map((cat: any) => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setSelectedCategory(cat.id)}
+                        <Link
                             className={`text-xs px-4 py-2 rounded-sm whitespace-nowrap font-medium transition-colors ${selectedCategory === cat.id
                                 ? "bg-amber-700 text-white"
                                 : "bg-stone-200 text-stone-700"
                                 }`}
+                            key={cat.id}
+                            href={`/${locale}/products/${cat.id}`}
                         >
                             {locale === "ur" ? cat.nameUr : cat.name}
-                        </button>
+                        </Link>
                     ))}
                 </div>
 
@@ -162,7 +165,7 @@ export default function ProductsPage({
                                         </span>
 
                                         <Link
-                                            href={`/${locale}/products/${prod.id}`}
+                                            href={`/${locale}/products/item/${prod.id}`}
                                             className="font-serif text-xl font-bold hover:text-amber-600"
                                         >
                                             {productName}
@@ -190,7 +193,7 @@ export default function ProductsPage({
                                     </span>
 
                                     <Link
-                                        href={`/${locale}/products/${prod.id}`}
+                                        href={`/${locale}/products/item/${prod.id}`}
                                         className="bg-amber-700 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2 rounded-sm transition-colors uppercase tracking-wider"
                                     >
                                         {t.details}

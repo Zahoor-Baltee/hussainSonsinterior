@@ -148,12 +148,10 @@ export default function Footer({ locale }: FooterProps) {
                             {CATEGORIES.map((category) => (
                                 <li key={category.id}>
                                     <Link
-                                        href={getHref(`products/${category.id}`)}
-                                        className="hover:text-amber-400"
+                                        key={category.id}
+                                        href={`/${locale}/products/${category.id}`}
                                     >
-                                        {locale === "ur"
-                                            ? category.nameUr
-                                            : category.name}
+                                        {locale === "ur" ? category.nameUr : category.name}
                                     </Link>
                                 </li>
                             ))}
