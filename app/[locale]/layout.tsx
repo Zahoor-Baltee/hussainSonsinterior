@@ -35,7 +35,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: locale === "ur" ? "اردو ویب سائٹ" : "English Website",
+    title: locale === "ur" ? "ہوسین اینڈ سونز کی ایس.سی.این وود ورک" : "Hussain & Sons CNC Woodwork",
     description:
       locale === "ur"
         ? "ہماری ویب سائٹ پر خوش آمدید۔"
