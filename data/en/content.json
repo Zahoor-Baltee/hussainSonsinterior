@@ -73,5 +73,11 @@
     "references": "References",
     "faqTag": "Got Questions?",
     "ctaTitle": "Let's Create Something Remarkable in Wood.",
-    "ctaDescription": "Whether you need ready-to-ship relief mirror frames or full bespoke architectural woodwork, our digital craft studio is ready for your project."
+    "ctaDescription": "Whether you need ready-to-ship relief mirror frames or full bespoke architectural woodwork, our digital craft studio is ready for your project.",
+    "productsDescription": "Filter through our precision CNC wood products. Every product can be customized in dimension and timber species.",
+    "searchProductsPlaceholder": "Search products or wood...",
+    "noMatchingProducts": "No matching CNC products found",
+    "adjustProductFilters": "Try adjusting your category filter or search terms.",
+    "dimensions": "Dimensions",
+    "finish": "Finish"
 }
