@@ -17,6 +17,7 @@ import {
 
 import { getContent } from "@/lib/i18n";
 import type { Locale } from "@/config/locales";
+import Image from "next/image";
 
 type HeaderProps = {
     locale: Locale;
@@ -74,8 +75,8 @@ export default function Header({ locale }: HeaderProps) {
         <>
             <div
                 className={`border-b text-xs px-4 py-2 flex justify-between items-center ${darkMode
-                        ? "border-stone-800 bg-stone-900/60 text-stone-400"
-                        : "border-stone-200 bg-stone-100/80 text-stone-600"
+                    ? "border-stone-800 bg-stone-900/60 text-stone-400"
+                    : "border-stone-200 bg-stone-100/80 text-stone-600"
                     }`}
             >
                 <div className="flex items-center gap-4">
@@ -126,8 +127,8 @@ export default function Header({ locale }: HeaderProps) {
                     <button
                         onClick={toggleTheme}
                         className={`p-1 rounded-full transition-colors ${darkMode
-                                ? "bg-stone-800 text-amber-400 hover:bg-stone-700"
-                                : "bg-stone-200 text-stone-700 hover:bg-stone-300"
+                            ? "bg-stone-800 text-amber-400 hover:bg-stone-700"
+                            : "bg-stone-200 text-stone-700 hover:bg-stone-300"
                             }`}
                         title="Toggle Light/Dark Theme"
                     >
@@ -143,8 +144,8 @@ export default function Header({ locale }: HeaderProps) {
             {/* --- MAIN NAVIGATION BAR --- */}
             <header
                 className={`sticky top-0 z-40 backdrop-blur-md border-b transition-colors ${darkMode
-                        ? "bg-stone-950/90 border-stone-800"
-                        : "bg-[#FAF8F5]/90 border-stone-200"
+                    ? "bg-stone-950/90 border-stone-800"
+                    : "bg-[#FAF8F5]/90 border-stone-200"
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -153,19 +154,26 @@ export default function Header({ locale }: HeaderProps) {
                         href={getHref("")}
                         className="flex items-center gap-3 cursor-pointer group"
                     >
-                        <div className="w-10 h-10 rounded-sm bg-amber-700 text-stone-50 flex items-center justify-center font-serif font-bold text-xl shadow-md group-hover:bg-amber-600 transition-colors">
-                            C
+                        {/* <div className="w-10 h-10 rounded-sm bg-amber-700 text-stone-50 flex items-center justify-center font-serif font-bold text-xl shadow-md group-hover:bg-amber-600 transition-colors">
+                            <Image src="/hs-lockup-transparent.png" alt="Hussain & Sons Logo" width={40} height={40} />
                         </div>
 
                         <div>
                             <span className="font-serif text-xl font-bold tracking-tight block uppercase">
-                                TimberCraft
+                                Hussain & Sons
                             </span>
 
                             <span className="text-[10px] tracking-widest text-amber-700 dark:text-amber-500 font-semibold uppercase block -mt-1">
                                 Architectural CNC
                             </span>
-                        </div>
+                        </div> */}
+                        <Image
+                            src="/hs-lockup-transparent.png"
+                            alt="Hussain & Sons Logo"
+                            width={160}
+                            height={40}
+                            className="w-full max-w-[160px] h-auto"
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -175,8 +183,8 @@ export default function Header({ locale }: HeaderProps) {
                                 key={link.id}
                                 href={getHref(link.path)}
                                 className={`transition-colors py-1 border-b-2 ${isActive(link.path)
-                                        ? "border-amber-600 text-amber-600 font-semibold"
-                                        : "border-transparent hover:text-amber-600 dark:text-stone-300"
+                                    ? "border-amber-600 text-amber-600 font-semibold"
+                                    : "border-transparent hover:text-amber-600 dark:text-stone-300"
                                     }`}
                             >
                                 {link.id === "home" && content.navHome}
@@ -217,8 +225,8 @@ export default function Header({ locale }: HeaderProps) {
                 {mobileMenuOpen && (
                     <div
                         className={`md:hidden border-b px-4 pt-2 pb-6 space-y-3 ${darkMode
-                                ? "bg-stone-900 border-stone-800"
-                                : "bg-stone-50 border-stone-200"
+                            ? "bg-stone-900 border-stone-800"
+                            : "bg-stone-50 border-stone-200"
                             }`}
                     >
                         {NAV_ITEMS.map((link) => (
@@ -227,8 +235,8 @@ export default function Header({ locale }: HeaderProps) {
                                 href={getHref(link.path)}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={`block w-full text-left py-2 text-base font-medium border-b ${darkMode
-                                        ? "border-stone-800 text-stone-200"
-                                        : "border-stone-200 text-stone-800"
+                                    ? "border-stone-800 text-stone-200"
+                                    : "border-stone-200 text-stone-800"
                                     }`}
                             >
                                 {link.id === "home" && content.navHome}
