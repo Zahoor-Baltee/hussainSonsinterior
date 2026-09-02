@@ -1,6 +1,6 @@
-import ProductsPage from "@/components/products/ProductsPage";
-import { Locale } from "@/config/locales";
 import { getContent } from "@/lib/i18n";
+import { Locale } from "@/config/locales";
+import CustomPage from "@/components/custom/CustomPage";
 
 type CustomRouteProps = {
     params: Promise<{
@@ -16,7 +16,7 @@ export default async function CustomRoute({
     const t = getContent(locale);
 
     return (
-        <ProductsPage
+        <CustomPage
             locale={locale}
             t={t}
         />

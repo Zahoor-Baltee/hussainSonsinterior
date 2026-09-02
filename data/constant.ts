@@ -414,3 +414,32 @@ export const FAQS = [
         aUr: "جی ہاں۔ تیار شدہ آرکیٹیکچرل مصنوعات کو محفوظ ترسیل کے لیے تیار کیا جا سکتا ہے، جبکہ منصوبے اور مقام کے مطابق تنصیب کی معاونت بھی دستیاب ہے۔",
     },
 ];
+export const CUSTOM_WORKFLOW = [
+    {
+        id: "consultation",
+        num: "01",
+        title: "Vector / CAD Consultation",
+        titleUr: "ویکٹر / CAD مشاورت",
+        desc: "We ingest your .dxf, .dwg, .ai vector files or simple dimensioned sketches to construct precise 3D CNC solid models.",
+        descUr:
+            "ہم آپ کی .dxf، .dwg، .ai ویکٹر فائلز یا سادہ پیمائش شدہ خاکوں کو استعمال کرکے درست 3D CNC سالڈ ماڈلز تیار کرتے ہیں۔",
+    },
+    {
+        id: "milling",
+        num: "02",
+        title: "Hardwood Selection & Milling",
+        titleUr: "معیاری لکڑی کا انتخاب اور ملنگ",
+        desc: "Select from Black Walnut, Oak, Teak, or Ash. We perform multi-pass roughing and fine relief carving with 0.05mm accuracy.",
+        descUr:
+            "بلیک وال نٹ، اوک، ساگوان یا ایش میں سے انتخاب کریں۔ ہم 0.05 ملی میٹر درستگی کے ساتھ ملٹی پاس رفنگ اور باریک ریلیف نقش کاری کرتے ہیں۔",
+    },
+    {
+        id: "finishing",
+        num: "03",
+        title: "Hand Polish & Varnish",
+        titleUr: "ہاتھ سے پالش اور وارنش",
+        desc: "Carvings are meticulously hand-sanded to smooth micro-fuzz before applying protective natural oils or exterior polyurethane.",
+        descUr:
+            "حفاظتی قدرتی آئل یا بیرونی پولی یوریتھین لگانے سے پہلے نقش کاری کو باریک ہاتھ سے سینڈ کرکے مکمل ہموار فنش دیا جاتا ہے۔",
+    },
+];

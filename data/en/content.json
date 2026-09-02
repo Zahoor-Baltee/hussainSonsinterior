@@ -85,5 +85,20 @@
     "defaultDimensions": "Default Dimensions",
     "protectiveCoating": "Protective Coating",
     "engineeringFeatures": "Engineering Features",
-    "customScalingHint": "Need custom dimensions or a different wood species? Click above to request custom scaling."
+    "customScalingHint": "Need custom dimensions or a different wood species? Click above to request custom scaling.",
+    "customStudioTag": "Architectural & Made-To-Order Studio",
+    "customStudioDescription": "From intricate carved ceiling rosettes to full parametric acoustic wall cladding. Send us your dimensions or CAD drawings and we handle everything from toolpath digital simulation to physical installation.",
+    "projectCategory": "Project Category",
+    "targetWoodSpecies": "Target Wood Species",
+    "uploadSketch": "Upload Sketch or Vector File (.DXF, .DWG, .AI, .PDF)",
+    "uploadDrawings": "Click to browse or drop architectural drawings here",
+    "maximumFileSize": "Maximum file size: 50MB",
+    "submitCustomSpecification": "Submit Custom Specification",
+    "customCeilingPanels": "Custom Ceiling Panels / Domes",
+    "bespokeCarvedDoors": "Bespoke Carved Doors",
+    "parametricWallPanelling": "Parametric Wall Panelling",
+    "customFretwork": "Custom Architectural Fretwork / Mashrabiya",
+    "largeMirrorFrame": "Large Mirror Frame Installation",
+    "americanBlackWalnut": "American Black Walnut",
+    "whiteOak": "White Oak"
 }
