@@ -168,11 +168,11 @@ export default function Header({ locale }: HeaderProps) {
                             </span>
                         </div> */}
                         <Image
-                            src="/hs-lockup-transparent.png"
+                            src="/hussain-sons-v2.png"
                             alt="Hussain & Sons Logo"
-                            width={160}
-                            height={40}
-                            className="w-full max-w-[160px] h-auto"
+                            width={200}
+                            height={50}
+                        // className="w-full max-w-[160px] h-auto"
                         />
                     </Link>
 

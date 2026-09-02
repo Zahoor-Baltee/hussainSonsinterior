@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import "../globals.css";
@@ -7,7 +8,10 @@ import { isValidLocale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
-
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -59,7 +63,8 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={direction}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={` ${roboto.variable} h-full antialiased`}
+    // className={`${geistSans.variable} ${geistMono.variable}  h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header locale={locale} />
