@@ -1,7 +1,8 @@
 import { Locale } from '@/config/locales';
 import { CATEGORIES } from '@/data/constant';
 import { getContent } from '@/lib/i18n';
-import { ChevronRight, Link } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 type ProductCategoriesProps = {
     locale: Locale;
 };

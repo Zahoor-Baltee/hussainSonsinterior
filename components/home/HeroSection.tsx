@@ -1,6 +1,7 @@
 import { Locale } from "@/config/locales";
 import { getContent } from "@/lib/i18n";
-import { ArrowRight, Box, Compass, Link, Ruler, Sparkles, Wrench } from "lucide-react"
+import { ArrowRight, Box, Compass, Ruler, Sparkles, Wrench } from "lucide-react"
+import Link from "next/link";
 import { CNCWoodGraphic } from "./CNCWoodGraphic";
 
 type HeroProps = {
@@ -8,6 +9,7 @@ type HeroProps = {
 };
 const HeroSection = ({ locale }: HeroProps) => {
     const content = getContent(locale);
+
     return (
         <section className="relative overflow-hidden py-16 lg:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
