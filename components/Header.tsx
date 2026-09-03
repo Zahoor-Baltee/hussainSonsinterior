@@ -82,7 +82,7 @@ export default function Header({ locale }: HeaderProps) {
                 <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1.5">
                         <Phone className="w-3.5 h-3.5 text-amber-600" />
-                        +1 (800) 555-WOOD
+                        +92 315 564 9733
                     </span>
 
                     <span className="hidden sm:flex items-center gap-1.5">
