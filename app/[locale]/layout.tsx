@@ -8,6 +8,7 @@ import { isValidLocale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import WhatsAppButton from "@/components/WhatsAppButton";
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
@@ -70,6 +71,11 @@ export default async function LocaleLayout({
         <Header locale={locale} />
         <Breadcrumb locale={locale} />
         {children}
+        <WhatsAppButton
+          message="Hi, I would like to know more about your CNC woodworking products."
+          label="WhatsApp"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
+        />
         <Footer locale={locale} />
       </body>
     </html>
