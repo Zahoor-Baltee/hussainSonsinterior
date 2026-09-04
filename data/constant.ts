@@ -1,4 +1,4 @@
-import { Box, Clock, Compass, Grid, Layers, Ruler, ShieldCheck, Sliders, Wrench } from "lucide-react";
+import { Box, Clock, Compass, Grid, Layers, Ruler, ShieldCheck, Sliders, Variable, Wrench } from "lucide-react";
 
 export const CATEGORIES = [
     {
@@ -493,3 +493,18 @@ export const GALLERY_ITEMS = [
         pattern: "parametric",
     },
 ];
+
+
+// | Variable              | Light     | Dark      | Purpose           |
+// | --------------------- | --------- | --------- | ----------------- |
+// | `--background`        | `#F7F5F0` | `#1C1A17` | Main page         |
+// | `--foreground`        | `#292622` | `#F2EEE7` | Main text         |
+// | `--surface`           | `#FFFFFF` | `#25221E` | Cards / sections  |
+// | `--surface-secondary` | `#EFEBE3` | `#302C27` | Secondary areas   |
+// | `--border`            | `#D9D3C8` | `#443E36` | Borders           |
+// | `--primary`           | `#8B5E3C` | `#C18A5A` | Main brand/action |
+// | `--muted`             | `#6F6A62` | `#AAA298` | Secondary text    |
+// | `--accent`            | `#B47A4A` | `#D29A66` | Highlights        |
+
+
+// <section className="bg-[var(--background)] text-[var(--foreground)]">

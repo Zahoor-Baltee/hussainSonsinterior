@@ -4,22 +4,83 @@
 @source "../app";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme */
+  --background: #F7F5F0;
+  --foreground: #292622;
+
+  --surface: #FFFFFF;
+  --surface-secondary: #EFEBE3;
+
+  --border: #D9D3C8;
+
+  --primary: #8B5E3C;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E4DED3;
+  --secondary-foreground: #292622;
+
+  --muted: #6F6A62;
+  --muted-foreground: #8A847B;
+
+  --accent: #B47A4A;
+  --accent-foreground: #FFFFFF;
+
+  --success: #4F6F52;
+  --danger: #A64B43;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --background: #1C1A17;
+  --foreground: #F2EEE7;
+
+  --surface: #25221E;
+  --surface-secondary: #302C27;
+
+  --border: #443E36;
+
+  --primary: #C18A5A;
+  --primary-foreground: #1C1A17;
+
+  --secondary: #3A342D;
+  --secondary-foreground: #F2EEE7;
+
+  --muted: #AAA298;
+  --muted-foreground: #857D73;
+
+  --accent: #D29A66;
+  --accent-foreground: #1C1A17;
+
+  --success: #789B7A;
+  --danger: #D2766D;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
