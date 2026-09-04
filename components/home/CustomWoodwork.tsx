@@ -23,14 +23,14 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
     );
     const content = getContent(locale);
     return (
-        <section className="py-20 relative overflow-hidden">
+        <section className="py-20 relative overflow-hidden bg-background text-foreground transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="rounded-sm border p-8 sm:p-12 bg-white border-stone-300 shadow-2xl">
+                <div className="rounded-sm border p-8 sm:p-12 bg-surface border-border shadow-2xl">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
                         {/* Info Column */}
                         <div className="lg:col-span-5 space-y-6">
-                            <span className="text-xs font-semibold uppercase tracking-widest text-amber-700">
+                            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
                                 {content.customSectionTag}
                             </span>
 
@@ -38,7 +38,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                 {content.customDesignTitle}
                             </h2>
 
-                            <p className="text-sm leading-relaxed text-stone-600">
+                            <p className="text-sm leading-relaxed text-muted">
                                 {content.customDesignDescription}
                             </p>
 
@@ -53,7 +53,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                         key={idx}
                                         className="flex items-start gap-2 text-xs font-medium"
                                     >
-                                        <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -61,15 +61,15 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                         </div>
 
                         {/* Interactive Spec Estimator Form */}
-                        <div className="lg:col-span-7 p-6 sm:p-8 rounded-sm border bg-stone-50 border-stone-200">
+                        <div className="lg:col-span-7 p-6 sm:p-8 rounded-sm border bg-surface-secondary border-border">
                             <h3 className="font-serif text-xl font-bold mb-6 flex items-center gap-2">
-                                <Sliders className="w-5 h-5 text-amber-600" />
+                                <Sliders className="w-5 h-5 text-primary" />
                                 {content.quoteHeader}
                             </h3>
 
                             {customForm.submitted ? (
                                 <div className="p-8 text-center space-y-4">
-                                    <div className="w-12 h-12 bg-amber-500/20 text-amber-600 rounded-full flex items-center justify-center mx-auto">
+                                    <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto">
                                         <Check className="w-6 h-6" />
                                     </div>
 
@@ -77,7 +77,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                         {content.customRequestReceived}
                                     </h4>
 
-                                    <p className="text-xs text-stone-500 max-w-md mx-auto">
+                                    <p className="text-xs text-muted-foreground max-w-md mx-auto">
                                         {content.customRequestReview}
                                     </p>
 
@@ -88,7 +88,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                 submitted: false,
                                             })
                                         }
-                                        className="text-xs text-amber-600 underline font-semibold"
+                                        className="text-xs text-primary underline font-semibold"
                                     >
                                         {content.submitAnotherSpecification}
                                     </button>
@@ -121,7 +121,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                         wood: e.target.value,
                                                     })
                                                 }
-                                                className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800"
+                                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
                                             >
                                                 <option value="Oak">
                                                     {content.americanWhiteOak}
@@ -159,7 +159,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                         finish: e.target.value,
                                                     })
                                                 }
-                                                className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800"
+                                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
                                             >
                                                 <option value="Matte Oil">
                                                     {content.naturalMatteHardWax}
@@ -190,7 +190,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
 
                                             {/* Width */}
                                             <div>
-                                                <span className="text-[10px] text-stone-500 block">
+                                                <span className="text-[10px] text-muted-foreground block">
                                                     {content.width}: {customForm.width} mm
                                                 </span>
 
@@ -206,13 +206,13 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                             width: Number(e.target.value),
                                                         })
                                                     }
-                                                    className="w-full accent-amber-700"
+                                                    className="w-full accent-primary"
                                                 />
                                             </div>
 
                                             {/* Height */}
                                             <div>
-                                                <span className="text-[10px] text-stone-500 block">
+                                                <span className="text-[10px] text-muted-foreground block">
                                                     {content.height}: {customForm.height} mm
                                                 </span>
 
@@ -228,13 +228,13 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                             height: Number(e.target.value),
                                                         })
                                                     }
-                                                    className="w-full accent-amber-700"
+                                                    className="w-full accent-primary"
                                                 />
                                             </div>
 
                                             {/* Thickness */}
                                             <div>
-                                                <span className="text-[10px] text-stone-500 block">
+                                                <span className="text-[10px] text-muted-foreground block">
                                                     {content.thickness}: {customForm.depth} mm
                                                 </span>
 
@@ -250,7 +250,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                             depth: Number(e.target.value),
                                                         })
                                                     }
-                                                    className="w-full accent-amber-700"
+                                                    className="w-full accent-primary"
                                                 />
                                             </div>
                                         </div>
@@ -272,18 +272,18 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                                     notes: e.target.value,
                                                 })
                                             }
-                                            className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800"
+                                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
                                         />
                                     </div>
 
                                     {/* Instant Price Preview */}
-                                    <div className="p-4 rounded-sm flex items-center justify-between border bg-white border-stone-200">
+                                    <div className="p-4 rounded-sm flex items-center justify-between border bg-surface border-border">
                                         <div>
-                                            <span className="text-xs text-stone-500 block">
+                                            <span className="text-xs text-muted-foreground block">
                                                 {content.customQuoteEst}
                                             </span>
 
-                                            <span className="text-xl font-serif font-bold text-amber-700">
+                                            <span className="text-xl font-serif font-bold text-primary">
                                                 ${estimatedPrice} - $
                                                 {Math.round(estimatedPrice * 1.25)}
                                             </span>
@@ -291,7 +291,7 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
 
                                         <button
                                             type="submit"
-                                            className="bg-amber-700 hover:bg-amber-600 text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-sm"
+                                            className="bg-primary hover:bg-accent text-primary-foreground text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-sm transition-colors"
                                         >
                                             {content.submitRequest}
                                         </button>
@@ -299,7 +299,6 @@ const CustomWoodwork = ({ locale }: CustomWoodworkProps) => {
                                 </form>
                             )}
                         </div>
-
                     </div>
                 </div>
             </div>
