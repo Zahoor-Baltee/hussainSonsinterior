@@ -3,6 +3,7 @@ import { PRODUCTS } from '@/data/constant';
 import { getContent } from '@/lib/i18n';
 import { CNCWoodGraphic } from './CNCWoodGraphic';
 import Link from 'next/link';
+import Image from 'next/image';
 type ReadyMadeProductsProps = {
     locale: Locale;
 };
@@ -33,7 +34,8 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                         >
                             {/* Graphic Box */}
                             <div className="aspect-4/3 relative overflow-hidden bg-surface-secondary">
-                                <CNCWoodGraphic pattern={prod.bgSvg} />
+                                {/* <CNCWoodGraphic pattern={prod.bgSvg} /> */}
+                                <Image src={`/portfolio/${prod.image}`} alt={locale === "ur" ? prod.nameUr : prod.name} fill className="object-cover" />
 
                                 <span className="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-primary text-primary-foreground rounded-xs shadow">
                                     {locale === "ur" ? prod.tagUr : prod.tag}

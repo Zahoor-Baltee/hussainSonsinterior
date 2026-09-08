@@ -4,6 +4,7 @@ import { getContent } from '@/lib/i18n';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { CNCWoodGraphic } from './CNCWoodGraphic';
+import Image from 'next/image';
 
 
 type PortfolioGalleryProps = {
@@ -42,7 +43,13 @@ const PortfolioGallery = ({ locale }: PortfolioGalleryProps) => {
                             href={`/${locale}/gallery`}
                             className="group relative rounded-sm overflow-hidden border border-border aspect-4/3 cursor-pointer"
                         >
-                            <CNCWoodGraphic pattern={item.pattern} />
+                            {/* <CNCWoodGraphic pattern={item.pattern} /> */}
+                            <Image
+                                src={`/portfolio/${item.image}`}
+                                alt={locale === "ur" ? item.titleUr : item.title}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform"
+                            />
 
                             <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 

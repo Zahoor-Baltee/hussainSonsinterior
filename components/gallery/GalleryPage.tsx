@@ -1,6 +1,7 @@
 import { Locale } from "@/config/locales";
 import { GALLERY_ITEMS } from "@/data/constant";
 import { CNCWoodGraphic } from "../home/CNCWoodGraphic";
+import Image from "next/image";
 
 type GalleryPageProps = {
     locale: Locale;
@@ -34,8 +35,9 @@ export default function GalleryPage({
                         key={item.id}
                         className="group relative rounded-sm overflow-hidden border border-stone-800 aspect-4/3 cursor-pointer shadow-md"
                     >
-                        <CNCWoodGraphic pattern={item.pattern} />
+                        {/* <CNCWoodGraphic pattern={item.pattern} /> */}
 
+                        <Image src={`/portfolio/${item.image}`} alt={locale === "ur" ? item.titleUr : item.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                             <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400">
                                 {locale === "ur"
