@@ -103,7 +103,8 @@ export default function Header({ locale }: HeaderProps) {
 
                     <span className="hidden md:flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5 text-primary" />
-                        Architectural Wood Mill, District 4
+                        Chak Shahzad, New Mall, Kuri Road, Near Madni Masjid, Islamabad, Pakistan
+
                     </span>
                 </div>
 

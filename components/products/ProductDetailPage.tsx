@@ -67,13 +67,13 @@ export default async function ProductDetailPage({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 {/* Visual Preview */}
                 <div className="lg:col-span-7">
-                    <div className="aspect-4/3 rounded-sm border overflow-hidden bg-white border-stone-300 shadow-xl">
+                    <div className="aspect-4/3 relative  rounded-sm border overflow-hidden bg-white border-stone-300 shadow-xl">
                         {/* <CNCWoodGraphic pattern={product.bgSvg} />
                          */}
                         <Image src={`/portfolio/${product.image}`} alt={productName} fill className="object-cover" />
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4 mt-4">
+                    {/* <div className="grid grid-cols-3 gap-4 mt-4">
                         {["radial", "waves", "lattice"].map((pattern) => (
                             <div
                                 key={pattern}
@@ -82,7 +82,7 @@ export default async function ProductDetailPage({
                                 <CNCWoodGraphic pattern={pattern} />
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Product Details */}
@@ -160,7 +160,8 @@ export default async function ProductDetailPage({
                     {/* CTA */}
                     <div className="pt-6 border-t border-stone-200 space-y-3">
                         <Link
-                            href={`/${locale}/custom`}
+                            href={`#`}
+                            // href={`/${locale}/custom`}
                             className="w-full inline-flex justify-center bg-amber-700 hover:bg-amber-600 text-white font-semibold py-3.5 rounded-sm text-xs uppercase tracking-wider transition-colors shadow-md"
                         >
                             {t.requestThis}

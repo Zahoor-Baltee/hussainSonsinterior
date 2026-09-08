@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Search, HelpCircle } from "lucide-react";
 import { CATEGORIES, PRODUCTS } from "@/data/constant";
 import { CNCWoodGraphic } from "../home/CNCWoodGraphic";
+import Image from "next/image";
 
 
 type ProductsPageProps = {
@@ -152,7 +153,8 @@ export default function ProductsPage({
                             >
                                 <div>
                                     <div className="aspect-4/3 relative bg-stone-950">
-                                        <CNCWoodGraphic pattern={prod.bgSvg} />
+                                        {/* <CNCWoodGraphic pattern={prod.bgSvg} /> */}
+                                        <Image src={`/portfolio/${prod.image}`} alt={productName} fill className="object-cover" />
 
                                         <span className="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-amber-700 text-white rounded-xs shadow">
                                             {wood}

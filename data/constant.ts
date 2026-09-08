@@ -8,6 +8,7 @@ export const CATEGORIES = [
         icon: Grid,
         count: 18,
         desc: "Intricately relief-carved accent and full-length wooden frames.",
+        image: "m1.jpg",
     },
     {
         id: "wall-clocks",
@@ -16,6 +17,7 @@ export const CATEGORIES = [
         icon: Clock,
         count: 12,
         desc: "Architectural clockworks combining natural timber grain & brass.",
+        image: "cl1.jpg",
     },
     {
         id: "wooden-doors",
@@ -24,6 +26,7 @@ export const CATEGORIES = [
         icon: Box,
         count: 24,
         desc: "Heavy solid entry & interior doors with deep CNC geometric carving.",
+        image: "d2.jpg",
     },
     {
         id: "wooden-windows",
@@ -32,6 +35,7 @@ export const CATEGORIES = [
         icon: Layers,
         count: 15,
         desc: "Custom louvers, screens, and classic carved frame surrounds.",
+        image: "w1.jpg",
     },
     {
         id: "ceiling-designs",
@@ -40,6 +44,7 @@ export const CATEGORIES = [
         icon: Compass,
         count: 20,
         desc: "Coffered panels, geometric grilles, and backlighted ceiling layouts.",
+        image: "c1.jpg",
     },
     {
         id: "decorative-panels",
@@ -48,6 +53,7 @@ export const CATEGORIES = [
         icon: Sliders,
         count: 32,
         desc: "Acoustic & 3D carved partition walls, mashrabiya and fretwork.",
+        image: "p1.jpg",
     },
 ];
 
