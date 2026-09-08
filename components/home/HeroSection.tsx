@@ -3,6 +3,7 @@ import { getContent } from "@/lib/i18n";
 import { ArrowRight, Box, Compass, Ruler, Sparkles, Wrench } from "lucide-react"
 import Link from "next/link";
 import { CNCWoodGraphic } from "./CNCWoodGraphic";
+import Image from "next/image";
 
 type HeroProps = {
     locale: Locale;
@@ -89,9 +90,10 @@ const HeroSection = ({ locale }: HeroProps) => {
                     <div className="lg:col-span-5 relative">
 
                         <div className="aspect-4/3 sm:aspect-square rounded-sm shadow-2xl overflow-hidden border border-border">
-                            <CNCWoodGraphic
+                            {/* <CNCWoodGraphic
                                 pattern="radial"
-                            />
+                            /> */}
+                            <Image src="/machine/m1.jpg" alt="CNC Wood machine working" fill className="object-cover" />
                         </div>
 
                         {/* Floating Metric Badge */}
