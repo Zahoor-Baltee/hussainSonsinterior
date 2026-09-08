@@ -70,7 +70,7 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                                     </div>
 
                                     <Link
-                                        href={`/${locale}/products/${prod.id}`}
+                                        href={`/${locale}/products/item/${prod.id}`}
                                         className="text-xs font-semibold px-4 py-2 rounded-sm border transition-colors border-border hover:bg-surface-secondary text-foreground"
                                     >
                                         {content.details}
