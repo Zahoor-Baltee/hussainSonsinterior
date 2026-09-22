@@ -49,15 +49,18 @@ export default function Breadcrumb({ locale }: BreadcrumbProps) {
     };
 
     return (
-        <div className="border-b text-xs py-3 px-4 sm:px-8 bg-stone-100/50 border-stone-200 text-stone-600">
+        <div className="border-b text-xs py-3 px-4 sm:px-8 bg-surface-secondary/50 border-border text-muted">
             <div className="max-w-7xl mx-auto flex items-center gap-2">
-                <a href={`/${locale}`} className="hover:text-amber-600">
+                <a
+                    href={`/${locale}`}
+                    className="hover:text-primary transition-colors"
+                >
                     {content.navHome}
                 </a>
 
-                <ChevronRight className="w-3 h-3 text-stone-400" />
+                <ChevronRight className="w-3 h-3 text-muted-foreground" />
 
-                <span className="capitalize font-semibold text-amber-700 dark:text-amber-500">
+                <span className="capitalize font-semibold text-primary">
                     {getCurrentLabel()}
                 </span>
             </div>

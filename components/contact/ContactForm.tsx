@@ -57,8 +57,8 @@ export default function ContactForm({ t }: ContactFormProps) {
     };
 
     return (
-        <div className="lg:col-span-7 p-8 rounded-sm border bg-white border-stone-200 shadow-lg dark:bg-stone-900 dark:border-stone-800">
-            <h3 className="font-serif text-xl font-bold mb-6">
+        <div className="lg:col-span-7 p-8 rounded-sm border bg-surface border-border shadow-lg">
+            <h3 className="font-serif text-xl font-bold mb-6 text-foreground">
                 {t.sendMessage}
             </h3>
 
@@ -67,7 +67,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                     <div>
-                        <label className="block text-xs font-semibold mb-1">
+                        <label className="block text-xs font-semibold mb-1 text-foreground">
                             {t.yourName}
                         </label>
 
@@ -75,12 +75,12 @@ export default function ContactForm({ t }: ContactFormProps) {
                             type="text"
                             name="name"
                             required
-                            className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800 dark:bg-stone-950 dark:border-stone-800 dark:text-stone-200"
+                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs font-semibold mb-1">
+                        <label className="block text-xs font-semibold mb-1 text-foreground">
                             {t.emailAddress}
                         </label>
 
@@ -88,7 +88,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                             type="email"
                             name="email"
                             required
-                            className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800 dark:bg-stone-950 dark:border-stone-800 dark:text-stone-200"
+                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
                     </div>
 
@@ -96,7 +96,7 @@ export default function ContactForm({ t }: ContactFormProps) {
 
                 <div>
                     <div>
-                        <label className="block text-xs font-semibold mb-1">
+                        <label className="block text-xs font-semibold mb-1 text-foreground">
                             {t.phone}
                         </label>
 
@@ -104,10 +104,11 @@ export default function ContactForm({ t }: ContactFormProps) {
                             type="tel"
                             name="phone"
                             required
-                            className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800 dark:bg-stone-950 dark:border-stone-800 dark:text-stone-200"
+                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
                     </div>
-                    <label className="block text-xs font-semibold mb-1">
+
+                    <label className="block text-xs font-semibold mb-1 text-foreground">
                         {t.subjectProjectType}
                     </label>
 
@@ -115,12 +116,12 @@ export default function ContactForm({ t }: ContactFormProps) {
                         type="text"
                         name="subject"
                         placeholder={t.subjectPlaceholder}
-                        className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800 dark:bg-stone-950 dark:border-stone-800 dark:text-stone-200"
+                        className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-xs font-semibold mb-1">
+                    <label className="block text-xs font-semibold mb-1 text-foreground">
                         {t.message}
                     </label>
 
@@ -129,17 +130,17 @@ export default function ContactForm({ t }: ContactFormProps) {
                         rows={4}
                         required
                         placeholder={t.messagePlaceholder}
-                        className="w-full text-xs p-3 rounded-sm border bg-white border-stone-300 text-stone-800 dark:bg-stone-950 dark:border-stone-800 dark:text-stone-200"
+                        className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                     />
                 </div>
 
                 <button
                     type="submit"
-                    className="bg-amber-700 hover:bg-amber-600 text-white text-xs font-semibold uppercase tracking-wider px-3 py-3 rounded-sm flex items-center gap-2"
+                    className="bg-primary hover:bg-accent text-primary-foreground text-xs font-semibold uppercase tracking-wider px-3 py-3 rounded-sm flex items-center gap-2 transition-colors"
                 >
                     {isLoading ? (
                         <>
-                            <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            <span className="w-3.5 h-3.5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                             {t.loading}
                         </>
                     ) : (

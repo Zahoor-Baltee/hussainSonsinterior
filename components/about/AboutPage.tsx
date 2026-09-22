@@ -17,11 +17,11 @@ export default function AboutPage({ t }: AboutPageProps) {
                     {t.aboutTitle}
                 </h1>
 
-                <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+                <p className="text-base leading-relaxed text-muted ">
                     {t.aboutDescriptionOne}
                 </p>
 
-                <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+                <p className="text-base leading-relaxed text-muted ">
                     {t.aboutDescriptionTwo}
                 </p>
             </div>

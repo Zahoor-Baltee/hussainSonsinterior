@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, HelpCircle } from "lucide-react";
 import { CATEGORIES, PRODUCTS } from "@/data/constant";
-import { CNCWoodGraphic } from "../home/CNCWoodGraphic";
 import Image from "next/image";
 
 
@@ -54,75 +53,89 @@ export default function ProductsPage({
     }, [selectedCategory, searchQuery]);
 
     return (
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-background text-foreground transition-colors">
             {/* Header */}
-            <div className="mb-8">
-                <h1 className="font-serif text-3xl sm:text-4xl font-bold">
+            <div className="w-full max-w-3xl mb-6 sm:mb-8">
+                <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
                     {t.readyMadeTitle}
                 </h1>
 
-                <p className="text-sm mt-2 text-stone-600">
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted">
                     {t.productsDescription}
                 </p>
             </div>
 
             {/* Search & Filter Controls */}
-            <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-8 pb-6 border-b border-stone-200">
-                {/* Category Tabs */}
-                <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
-                    <button
-                        onClick={() => setSelectedCategory("all")}
-                        className={`text-xs px-4 py-2 rounded-sm whitespace-nowrap font-medium transition-colors ${selectedCategory === "all"
-                            ? "bg-amber-700 text-white"
-                            : "bg-stone-200 text-stone-700"
-                            }`}
-                    >
-                        {t.all}
-                    </button>
+            <div className="w-full mb-6 sm:mb-8 pb-5 sm:pb-6 border-b border-border">
 
-                    {CATEGORIES.map((cat: any) => (
-                        <Link
-                            className={`text-xs px-4 py-2 rounded-sm whitespace-nowrap font-medium transition-colors ${selectedCategory === cat.id
-                                ? "bg-amber-700 text-white"
-                                : "bg-stone-200 text-stone-700"
+                {/* Categories */}
+                <div className="w-full overflow-hidden">
+                    <div className="flex w-full gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                        <button
+                            onClick={() => setSelectedCategory("all")}
+                            className={`shrink-0 text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded-sm font-medium whitespace-nowrap transition-colors ${selectedCategory === "all"
+                                    ? "bg-primary text-primary-foreground"
+                                    : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
                                 }`}
-                            key={cat.id}
-                            href={`/${locale}/products/${cat.id}`}
                         >
-                            {locale === "ur" ? cat.nameUr : cat.name}
-                        </Link>
-                    ))}
+                            {t.all}
+                        </button>
+
+                        {CATEGORIES.map((cat: any) => (
+                            <Link
+                                key={cat.id}
+                                href={`/${locale}/products/${cat.id}`}
+                                className={`shrink-0 text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded-sm font-medium whitespace-nowrap transition-colors ${selectedCategory === cat.id
+                                        ? "bg-primary text-primary-foreground"
+                                        : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
+                                    }`}
+                            >
+                                {locale === "ur" ? cat.nameUr : cat.name}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
-                {/* Search Box */}
-                <div className="relative w-full md:w-64">
-                    <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
+                {/* Search */}
+                <div className="relative w-full sm:w-80 sm:ml-auto mt-3 sm:mt-4">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
 
                     <input
                         type="text"
                         placeholder={t.searchProductsPlaceholder}
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full text-xs pl-9 pr-3 py-2.5 rounded-sm border bg-white border-stone-300 text-stone-800"
+                        className="w-full h-10 text-xs pl-9 pr-3 rounded-sm border border-border bg-surface text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                     />
                 </div>
             </div>
 
-            {/* Product Grid */}
+            {/* Products */}
             {filteredProducts.length === 0 ? (
-                <div className="text-center py-20">
-                    <HelpCircle className="w-12 h-12 text-stone-400 mx-auto mb-3" />
+                <div className="w-full text-center py-16 sm:py-20">
+                    <HelpCircle className="w-10 sm:w-12 h-10 sm:h-12 text-muted-foreground mx-auto mb-3" />
 
-                    <h3 className="font-serif text-lg font-bold">
+                    <h3 className="font-serif text-base sm:text-lg font-bold text-foreground">
                         {t.noMatchingProducts}
                     </h3>
 
-                    <p className="text-xs text-stone-500 mt-1">
+                    <p className="text-xs text-muted-foreground mt-1">
                         {t.adjustProductFilters}
                     </p>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    className="
+                w-full
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-5
+                sm:gap-6
+                lg:gap-8
+            "
+                >
                     {filteredProducts.map((prod: any) => {
                         const productName =
                             locale === "ur" ? prod.nameUr : prod.name;
@@ -147,61 +160,89 @@ export default function ProductsPage({
                             : "";
 
                         return (
-                            <div
+                            <article
                                 key={prod.id}
-                                className="rounded-sm border overflow-hidden flex flex-col justify-between transition-all bg-white border-stone-200 hover:shadow-xl"
+                                className="
+                            group
+                            w-full
+                            min-w-0
+                            overflow-hidden
+                            rounded-sm
+                            border
+                            border-border
+                            bg-surface
+                            flex
+                            flex-col
+                        "
                             >
-                                <div>
-                                    <div className="aspect-4/3 relative bg-stone-950">
-                                        {/* <CNCWoodGraphic pattern={prod.bgSvg} /> */}
-                                        <Image src={`/portfolio/${prod.image}`} alt={productName} fill className="object-cover" />
+                                {/* Product Image */}
+                                <Link
+                                    href={`/${locale}/products/item/${prod.id}`}
+                                    className="relative block w-full aspect-[4/3] overflow-hidden bg-surface-secondary"
+                                >
+                                    <Image
+                                        src={`/portfolio/${prod.image}`}
+                                        alt={productName}
+                                        fill
+                                        sizes="
+                                    (max-width: 639px) 100vw,
+                                    (max-width: 1023px) 50vw,
+                                    33vw
+                                "
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                    />
 
-                                        <span className="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-amber-700 text-white rounded-xs shadow">
-                                            {wood}
-                                        </span>
-                                    </div>
+                                    <span className="absolute top-3 right-3 z-10 max-w-[70%] truncate text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-primary text-primary-foreground rounded-xs shadow">
+                                        {wood}
+                                    </span>
+                                </Link>
 
-                                    <div className="p-6">
-                                        <span className="text-[10px] uppercase font-mono tracking-widest text-amber-600 block mb-1">
+                                {/* Product Content */}
+                                <div className="flex flex-1 flex-col">
+                                    <div className="p-4 sm:p-5 lg:p-6">
+                                        <span className="block mb-1 text-[9px] sm:text-[10px] uppercase font-mono tracking-widest text-accent truncate">
                                             {categoryName}
                                         </span>
 
                                         <Link
                                             href={`/${locale}/products/item/${prod.id}`}
-                                            className="font-serif text-xl font-bold hover:text-amber-600"
+                                            className="block font-serif text-lg sm:text-xl font-bold leading-tight hover:text-primary transition-colors break-words"
                                         >
                                             {productName}
                                         </Link>
 
-                                        <p className="text-xs leading-relaxed mt-2 text-stone-600">
+                                        <p className="mt-2 text-xs leading-relaxed text-muted break-words">
                                             {productDescription}
                                         </p>
 
-                                        <div className="mt-4 space-y-1 text-[11px] text-stone-500 font-mono">
-                                            <div>
+                                        <div className="mt-4 space-y-1 text-[10px] sm:text-[11px] text-muted-foreground font-mono">
+                                            <div className="break-words">
                                                 {t.dimensions}: {prod.dimensions}
                                             </div>
 
-                                            <div>
+                                            <div className="break-words">
                                                 {t.finish}: {finish}
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="p-6 pt-0 flex items-center justify-between border-t border-transparent">
-                                    <span className="text-xl font-serif font-bold text-amber-700">
-                                        {prod.price}
-                                    </span>
+                                    {/* Product Footer */}
+                                    <div className="mt-auto px-4 pb-4 sm:px-5 sm:pb-5 lg:px-6 lg:pb-6">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <span className="min-w-0 truncate text-lg sm:text-xl font-serif font-bold text-primary">
+                                                {prod.price}
+                                            </span>
 
-                                    <Link
-                                        href={`/${locale}/products/item/${prod.id}`}
-                                        className="bg-amber-700 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2 rounded-sm transition-colors uppercase tracking-wider"
-                                    >
-                                        {t.details}
-                                    </Link>
+                                            <Link
+                                                href={`/${locale}/products/item/${prod.id}`}
+                                                className="shrink-0 bg-primary hover:bg-accent text-primary-foreground text-[10px] sm:text-xs font-semibold px-3 sm:px-4 py-2 rounded-sm transition-colors uppercase tracking-wider"
+                                            >
+                                                {t.details}
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </article>
                         );
                     })}
                 </div>

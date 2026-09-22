@@ -21,7 +21,7 @@ export default function ContactPage({ t }: ContactPageProps) {
                         {t.startYourWoodProject}
                     </h1>
 
-                    <p className="text-sm leading-relaxed text-stone-600 dark:text-stone-300">
+                    <p className="text-sm leading-relaxed text-muted">
                         {t.contactDescription}
                     </p>
 

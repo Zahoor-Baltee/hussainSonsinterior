@@ -23,7 +23,7 @@ export default function GalleryPage({
                     {t.galleryTitle}
                 </h1>
 
-                <p className="text-sm mt-2 text-stone-600">
+                <p className="text-sm mt-2 text-muted">
                     {t.galleryDescription}
                 </p>
             </div>
