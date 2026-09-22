@@ -153,7 +153,6 @@ export default function CustomPage({
 
             form.reset();
             setSelectedFile(null);
-
         } catch (error) {
             console.error("Error submitting contact form:", error);
 
