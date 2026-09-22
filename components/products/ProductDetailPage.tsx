@@ -4,8 +4,7 @@ import { ArrowLeft, Check } from "lucide-react";
 
 import { getContent } from "@/lib/i18n";
 import { Locale } from "@/config/locales";
-import { CATEGORIES, PRODUCTS } from "@/data/constant";
-import { CNCWoodGraphic } from "@/components/home/CNCWoodGraphic";
+import { CATEGORIES } from "@/data/constant";
 import Image from "next/image";
 
 type ProductDetailPageProps = {
@@ -161,7 +160,13 @@ export default async function ProductDetailPage({
                     {/* CTA */}
                     <div className="pt-6 border-t border-border space-y-3">
                         <Link
-                            href={`#`}
+                            href={{
+                                pathname: `/${locale}/custom`,
+                                query: {
+                                    product: product.params,
+                                    category: categoryName?.toLowerCase(),
+                                },
+                            }}
                             // href={`/${locale}/custom`}
                             className="w-full inline-flex justify-center bg-primary hover:bg-accent text-primary-foreground font-semibold py-3.5 rounded-sm text-xs uppercase tracking-wider transition-colors shadow-md"
                         >

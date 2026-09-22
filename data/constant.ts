@@ -60,6 +60,7 @@ export const CATEGORIES = [
 export const PRODUCTS = [
     {
         id: "p1",
+        params: "nordic-radial-oak-mirror-frame",
         name: "Nordic Radial Oak Mirror Frame",
         nameUr: "نورڈک ریڈیل اوک آئینے کا فریم",
         category: "mirror-frames",
@@ -92,6 +93,7 @@ export const PRODUCTS = [
     {
         id: "p2",
         name: "Chronos 3D Carved Wall Clock",
+        params: "chronos-carved-wall-clock",
         nameUr: "کرونوس تھری ڈی نقش دار وال کلاک",
         category: "wall-clocks",
         price: "$380",
@@ -123,6 +125,7 @@ export const PRODUCTS = [
     {
         id: "p3",
         name: "Grand Islamic Lattice Door (Double)",
+        params: "grand-islamic-lattice-door",
         nameUr: "گرینڈ اسلامی جالی دار ڈبل دروازہ",
         category: "wooden-doors",
         price: "$2,850",
@@ -154,6 +157,7 @@ export const PRODUCTS = [
     {
         id: "p4",
         name: "Parametric Acoustic Wall Panel",
+        params: "parametric-acoustic-wall-panel",
         nameUr: "پیرامیٹرک ایکوسٹک وال پینل",
         category: "decorative-panels",
         price: "$420 / m²",
@@ -185,6 +189,7 @@ export const PRODUCTS = [
     {
         id: "p5",
         name: "Octagonal Heritage Ceiling Rose",
+        params: "octagonal-heritage-ceiling-rose",
         nameUr: "آکٹاگونل ہیریٹیج سیلنگ روز",
         category: "ceiling-designs",
         price: "$1,150",
@@ -216,6 +221,7 @@ export const PRODUCTS = [
     {
         id: "p6",
         name: "Mashrabiya Arch Window Screen",
+        params: "mashrabiya-arch-window-screen",
         nameUr: "مشربیہ محرابی کھڑکی اسکرین",
         category: "wooden-windows",
         price: "$890",
