@@ -1,18 +1,124 @@
 "use client";
-
 import { CUSTOM_WORKFLOW } from "@/data/constant";
 import { Sliders } from "lucide-react";
-
-
+import { FormEvent, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { supabase } from "@/lib/supabase";
 type CustomPageProps = {
     locale: string;
     t: any;
 };
-
 export default function CustomPage({
     locale,
     t,
 }: CustomPageProps) {
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+
+        try {
+            setIsLoading(true);
+
+            const formData = new FormData(form);
+
+            const name = formData.get("name") as string;
+            const email = formData.get("email") as string;
+            const phone = formData.get("phone") as string;
+            const targetWoodSpecies =
+                formData.get("targetWoodSpecies") as string;
+            const projectCategory =
+                formData.get("projectCategory") as string;
+            const notes = formData.get("notes") as string;
+
+            const file = formData.get("uploadDrawings") as File | null;
+
+            let uploadDrawings = "";
+
+            // Upload drawing
+            if (file && file.size > 0) {
+                const allowedTypes = [
+                    "image/jpeg",
+                    "image/png",
+                    "application/pdf",
+                ];
+
+                // 10 MB limit
+                if (file.size > 10 * 1024 * 1024) {
+                    alert("File size must be less than 10 MB.");
+                    return;
+                }
+
+                // File type validation
+                if (!allowedTypes.includes(file.type)) {
+                    alert("Only JPG, PNG, and PDF files are allowed.");
+                    return;
+                }
+
+                const fileExtension =
+                    file.name.split(".").pop()?.toLowerCase() || "file";
+
+                const uniqueFileName =
+                    `${crypto.randomUUID()}.${fileExtension}`;
+
+                const filePath = `requests/${uniqueFileName}`;
+
+                const { error: uploadError } = await supabase.storage
+                    .from("project-drawings")
+                    .upload(filePath, file, {
+                        cacheControl: "3600",
+                        upsert: false,
+                        contentType: file.type,
+                    });
+
+                if (uploadError) {
+                    throw new Error(
+                        `File upload failed: ${uploadError.message}`
+                    );
+                }
+
+                const { data } = supabase.storage
+                    .from("project-drawings")
+                    .getPublicUrl(filePath);
+
+                uploadDrawings = data.publicUrl;
+            }
+
+            // Send email
+            await emailjs.send(
+                "service_0zrjpds",
+                "template_9ca0fnh",
+                {
+                    name,
+                    email,
+                    phone,
+                    targetWoodSpecies,
+                    projectCategory,
+                    notes,
+                    uploadDrawings,
+                },
+                {
+                    publicKey: "kCmRNovEbyNUXu2ql",
+                }
+            );
+
+            alert("Email sent successfully!");
+
+            form.reset();
+            setSelectedFile(null);
+        } catch (error) {
+            console.error("Error submitting contact form:", error);
+
+            alert(
+                "Something went wrong while submitting your request. Please try again."
+            );
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-background text-foreground transition-colors">
             <div className="max-w-3xl mb-12">
@@ -62,19 +168,60 @@ export default function CustomPage({
                 </h2>
 
                 <form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                    }}
+                    onSubmit={handleSubmit}
                     className="space-y-6"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+
+                        <div>
+                            <label className="block text-xs font-semibold mb-1 text-foreground">
+                                {t.yourName}
+                            </label>
+
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                            />
+                        </div>
+
+
+                        <div>
+                            <label className="block text-xs font-semibold mb-1 text-foreground">
+                                {t.emailAddress}
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-semibold mb-1 text-foreground">
+                                {t.phone}
+                            </label>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                                required
+                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                            />
+                        </div>
                         {/* Project Category */}
                         <div>
                             <label className="block text-xs font-semibold mb-2 text-foreground">
                                 {t.projectCategory}
                             </label>
 
-                            <select className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                            <select
+                                name="projectCategory"
+                                required
+                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
                                 <option>{t.customCeilingPanels}</option>
                                 <option>{t.bespokeCarvedDoors}</option>
                                 <option>{t.parametricWallPanelling}</option>
@@ -89,7 +236,10 @@ export default function CustomPage({
                                 {t.targetWoodSpecies}
                             </label>
 
-                            <select className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
+                            <select
+                                name="targetWoodSpecies"
+                                required
+                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary">
                                 <option>{t.americanBlackWalnut}</option>
                                 <option>{t.whiteOak}</option>
                                 <option>{t.burmeseTeak}</option>
@@ -97,7 +247,20 @@ export default function CustomPage({
                             </select>
                         </div>
                     </div>
+                    {/* Project Notes */}
+                    <div>
+                        <label className="block text-xs font-semibold mb-1">
+                            {t.projectNotes}
+                        </label>
 
+                        <textarea
+                            rows={3}
+                            placeholder={t.projectNotesPlaceholder}
+                            name="notes"
+                            required
+                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
+                        />
+                    </div>
                     {/* File Upload */}
                     <div>
                         <label className="block text-xs font-semibold mb-2 text-foreground">
@@ -107,18 +270,28 @@ export default function CustomPage({
                         <label className="border-2 border-dashed p-8 text-center rounded-sm cursor-pointer border-border hover:border-primary block transition-colors">
                             <Sliders className="w-8 h-8 text-accent mx-auto mb-2" />
 
-                            <span className="text-xs font-semibold block text-foreground">
-                                {t.uploadDrawings}
-                            </span>
 
+                            <span className="text-xs font-semibold block text-foreground truncate max-w-full">
+                                {selectedFile
+                                    ? `Selected: ${selectedFile.name}`
+                                    : t.uploadDrawings}
+                            </span>
                             <span className="text-[10px] text-muted-foreground mt-1 block">
-                                {t.maximumFileSize}
+                                {selectedFile
+                                    ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} MB`
+                                    : t.maximumFileSize}
                             </span>
 
                             <input
+                                name="uploadDrawings"
+                                required
                                 type="file"
-                                accept=".dxf,.dwg,.ai,.pdf"
+                                accept=".jpg,.jpeg,.png,.pdf"
                                 className="hidden"
+                                onChange={(e) => {
+                                    const file = e.target.files?.[0] || null;
+                                    setSelectedFile(file);
+                                }}
                             />
                         </label>
                     </div>
@@ -127,7 +300,7 @@ export default function CustomPage({
                         type="submit"
                         className="bg-primary hover:bg-accent text-primary-foreground text-xs font-semibold uppercase tracking-wider px-8 py-3.5 rounded-sm transition-colors"
                     >
-                        {t.submitCustomSpecification}
+                        {isLoading ? t.loading : t.submitCustomSpecification}
                     </button>
                 </form>
             </div>
