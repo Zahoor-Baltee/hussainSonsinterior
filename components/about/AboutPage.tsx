@@ -8,8 +8,8 @@ type AboutPageProps = {
 export default function AboutPage({ t }: AboutPageProps) {
     return (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="max-w-3xl space-y-6">
-                <span className="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-500">
+            <div className="space-y-6">
+                <span className="text-xs font-semibold uppercase tracking-widest text-foreground">
                     {t.aboutHeritage}
                 </span>
 
@@ -26,9 +26,9 @@ export default function AboutPage({ t }: AboutPageProps) {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-stone-200 dark:border-stone-800">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-border ">
                 <div>
-                    <span className="text-3xl font-serif font-bold text-amber-700 dark:text-amber-500 block">
+                    <span className="text-3xl font-serif font-bold text-foreground block">
                         15+ {t.years}
                     </span>
 
@@ -38,7 +38,7 @@ export default function AboutPage({ t }: AboutPageProps) {
                 </div>
 
                 <div>
-                    <span className="text-3xl font-serif font-bold text-amber-700 dark:text-amber-500 block">
+                    <span className="text-3xl font-serif font-bold text-foreground block">
                         1,200+
                     </span>
 
@@ -48,7 +48,7 @@ export default function AboutPage({ t }: AboutPageProps) {
                 </div>
 
                 <div>
-                    <span className="text-3xl font-serif font-bold text-amber-700 dark:text-amber-500 block">
+                    <span className="text-3xl font-serif font-bold text-foreground block">
                         0.05 mm
                     </span>
 

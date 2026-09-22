@@ -13,9 +13,9 @@ export default function GalleryPage({
     t,
 }: GalleryPageProps) {
     return (
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="mb-10 text-center max-w-2xl mx-auto">
-                <span className="text-xs font-semibold uppercase tracking-widest text-amber-700">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="mb-10  text-center  mx-auto">
+                <span className="text-xs font-semibold uppercase tracking-widest text-foreground">
                     {t.portfolioTag}
                 </span>
 
@@ -33,7 +33,7 @@ export default function GalleryPage({
                 {GALLERY_ITEMS.map((item) => (
                     <div
                         key={item.id}
-                        className="group relative rounded-sm overflow-hidden border border-stone-800 aspect-4/3 cursor-pointer shadow-md"
+                        className="group relative rounded-sm overflow-hidden border border-border  aspect-4/3 cursor-pointer shadow-md"
                     >
                         {/* <CNCWoodGraphic pattern={item.pattern} /> */}
 
