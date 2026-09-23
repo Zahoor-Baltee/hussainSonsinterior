@@ -165,7 +165,7 @@ export default function CustomPage({
     };
 
     return (
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-background text-foreground transition-colors">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 bg-background text-foreground transition-colors overflow-x-hidden">
             <div className="max-w-3xl mb-12">
                 <span className="text-xs font-semibold uppercase tracking-widest text-primary">
                     {t.customStudioTag}
@@ -207,7 +207,7 @@ export default function CustomPage({
             </div>
 
             {/* Quote Tool */}
-            <div className="p-8 sm:p-12 rounded-sm border bg-surface border-border shadow-xl">
+            <div className="w-full min-w-0 p-4 sm:p-8 lg:p-12 rounded-sm border bg-surface border-border shadow-xl">
                 <h2 className="font-serif text-2xl font-bold mb-6 text-foreground">
                     {t.quoteHeader}
                 </h2>
@@ -216,7 +216,7 @@ export default function CustomPage({
                     onSubmit={handleSubmit}
                     className="space-y-6"
                 >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 min-w-0">
 
 
                         <div>
@@ -228,7 +228,7 @@ export default function CustomPage({
                                 type="text"
                                 name="name"
                                 required
-                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                                className="w-full min-w-0 text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                             />
                         </div>
 
@@ -242,7 +242,7 @@ export default function CustomPage({
                                 type="email"
                                 name="email"
                                 required
-                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                                className="w-full min-w-0 text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                             />
                         </div>
                         <div>
@@ -254,7 +254,7 @@ export default function CustomPage({
                                 type="tel"
                                 name="phone"
                                 required
-                                className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                                className="w-full min-w-0  text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                             />
                         </div>
                         {/* Project Category */}
@@ -269,7 +269,7 @@ export default function CustomPage({
                                     <select
                                         name="projectCategory"
                                         required
-                                        className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                                        className="w-full min-w-0 text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                                     >
                                         <option>{t.customCeilingPanels}</option>
                                         <option>{t.bespokeCarvedDoors}</option>
@@ -288,7 +288,7 @@ export default function CustomPage({
                                     <select
                                         name="targetWoodSpecies"
                                         required
-                                        className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                                        className="w-full min-w-0 text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                                     >
                                         <option>{t.americanBlackWalnut}</option>
                                         <option>{t.whiteOak}</option>
@@ -313,10 +313,12 @@ export default function CustomPage({
                             required
                             defaultValue={
                                 hasProductAndCategory
-                                    ? `I am interested in having a custom ${productName?.name} made in the ${category} category. Please provide more details about the available options, pricing, and estimated completion time.`
+                                    ? locale === "en"
+                                        ? `I am interested in having a custom ${productName?.name} made in the ${category} category. Please provide more details about the available options, pricing, and estimated completion time.`
+                                        : `مجھے ${category} کیٹیگری میں ${productName?.nameUr} اپنی ضرورت کے مطابق تیار کروانے میں دلچسپی ہے۔ براہِ کرم دستیاب آپشنز، قیمت اور متوقع تکمیل کے وقت کے بارے میں مزید معلومات فراہم کریں۔`
                                     : undefined
                             }
-                            className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
+                            className="w-full min-w-0 text-xs p-3 rounded-sm border bg-surface border-border text-foreground"
                         />
                     </div>
                     {/* File Upload */}
@@ -326,10 +328,10 @@ export default function CustomPage({
                                 {t.uploadSketch}
                             </label>
 
-                            <label className="border-2 border-dashed p-8 text-center rounded-sm cursor-pointer border-border hover:border-primary block transition-colors">
+                            <label className="w-full min-w-0 border-2 border-dashed p-4 sm:p-8 text-center rounded-sm cursor-pointer border-border hover:border-primary block transition-colors overflow-hidden">
                                 <Sliders className="w-8 h-8 text-accent mx-auto mb-2" />
 
-                                <span className="text-xs font-semibold block text-foreground truncate max-w-full">
+                                <span className="block w-full min-w-0 px-2 text-xs font-semibold text-foreground truncate">
                                     {selectedFile
                                         ? `Selected: ${selectedFile.name}`
                                         : t.uploadDrawings}
