@@ -84,39 +84,28 @@ export default function Footer({ locale }: FooterProps) {
     };
 
     return (
-        <footer className="border-t text-xs transition-colors bg-stone-900 border-stone-800 text-stone-400">
+        <footer className="border-t text-xs transition-colors bg-footer border-footer-border text-footer-muted">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 
                     {/* Brand Intro */}
                     <div className="md:col-span-4 space-y-4">
-                        {/* <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-sm bg-amber-700 text-stone-50 flex items-center justify-center font-serif font-bold text-lg">
-                                C
-                            </div>
-
-                            <span className="font-serif text-lg font-bold text-white tracking-tight uppercase">
-                                TimberCraft
-                            </span>
-                        </div> */}
                         <Image
                             src="/hussain-sons-v2.png"
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
-                        // className="w-full max-w-[160px] h-auto"
                         />
-                        <p className="text-xs leading-relaxed text-stone-400">
-                            Premium architectural CNC wood crafting mill. Creating
-                            ready-to-ship relief mirror frames, decorative clocks, custom
-                            carved doors, windows, and sound-diffusing wall panels.
+
+                        <p className="text-xs leading-relaxed text-footer-muted">
+                            {content.footerTagline}
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="md:col-span-2 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
-                            Navigation
+                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                            {content.footerNav}
                         </h4>
 
                         <ul className="space-y-2">
@@ -124,7 +113,7 @@ export default function Footer({ locale }: FooterProps) {
                                 <li key={link.id}>
                                     <Link
                                         href={getHref(link.path)}
-                                        className="hover:text-amber-400 capitalize"
+                                        className="hover:text-accent capitalize transition-colors"
                                     >
                                         {link.id === "home" && content.navHome}
                                         {link.id === "products" && content.navProducts}
@@ -140,18 +129,20 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Categories */}
                     <div className="md:col-span-3 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
-                            Product Lines
+                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                            {content.footerPro}
                         </h4>
 
                         <ul className="space-y-2">
                             {CATEGORIES.map((category) => (
                                 <li key={category.id}>
                                     <Link
-                                        key={category.id}
                                         href={`/${locale}/products/${category.id}`}
+                                        className="hover:text-accent transition-colors"
                                     >
-                                        {locale === "ur" ? category.nameUr : category.name}
+                                        {locale === "ur"
+                                            ? category.nameUr
+                                            : category.name}
                                     </Link>
                                 </li>
                             ))}
@@ -160,22 +151,22 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Business Contact */}
                     <div className="md:col-span-3 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
-                            Mill Hours
+                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                            {content.millHours}
                         </h4>
 
-                        <p className="text-xs text-stone-400">
-                            Monday - Friday: 08:00 - 18:00
+                        <p className="text-xs text-footer-muted">
+                            {content.weekTime}
                         </p>
 
-                        <p className="text-xs text-stone-400">
-                            Saturday (CAD Appts Only): 09:00 - 14:00
+                        <p className="text-xs text-footer-muted">
+                            {content.weekendTime}
                         </p>
 
                         <div className="pt-2">
                             <Link
                                 href={getHref("custom")}
-                                className="inline-block bg-amber-700 hover:bg-amber-600 text-white text-[11px] font-semibold uppercase px-4 py-2 rounded-sm"
+                                className="inline-block bg-primary hover:bg-accent text-primary-foreground text-[11px] font-semibold uppercase px-4 py-2 rounded-sm transition-colors"
                             >
                                 {content.requestCustom}
                             </Link>
@@ -183,25 +174,34 @@ export default function Footer({ locale }: FooterProps) {
                     </div>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500">
+                <div className="mt-12 pt-8 border-t border-footer-border flex flex-col sm:flex-row justify-between items-center text-[11px] text-footer-muted">
                     <span>
                         © {new Date().getFullYear()} Hussain & Sons CNC Wood Crafting. All
                         rights reserved.
                     </span>
 
-                    <div className="flex gap-4 mt-2 sm:mt-0">
-                        <Link href={getHref("privacy")} className="hover:underline">
+                    {/* <div className="flex gap-4 mt-2 sm:mt-0">
+                        <Link
+                            href={getHref("privacy")}
+                            className="hover:text-accent hover:underline transition-colors"
+                        >
                             Privacy Policy
                         </Link>
 
-                        <Link href={getHref("terms")} className="hover:underline">
+                        <Link
+                            href={getHref("terms")}
+                            className="hover:text-accent hover:underline transition-colors"
+                        >
                             Terms of Fabrication
                         </Link>
 
-                        <Link href={getHref("cad-guidelines")} className="hover:underline">
+                        <Link
+                            href={getHref("cad-guidelines")}
+                            className="hover:text-accent hover:underline transition-colors"
+                        >
                             CAD Guidelines
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

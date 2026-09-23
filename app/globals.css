@@ -27,6 +27,11 @@
 
   --success: #4F6F52;
   --danger: #A64B43;
+
+  --footer: #292622;
+  --footer-foreground: #F2EEE7;
+  --footer-muted: #AAA298;
+  --footer-border: #443E36;
 }
 
 [data-theme="dark"] {
@@ -53,6 +58,11 @@
 
   --success: #789B7A;
   --danger: #D2766D;
+
+  --footer: #151311;
+  --footer-foreground: #F2EEE7;
+  --footer-muted: #AAA298;
+  --footer-border: #302C27;
 }
 
 @theme inline {
@@ -75,6 +85,11 @@
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-border: var(--footer-border);
 
   --color-success: var(--success);
   --color-danger: var(--danger);

@@ -1,5 +1,6 @@
 {
     "tagline": "Precision Crafted. Designed in Wood.",
+    "footerTagline": "Premium architectural CNC wood crafting mill. Creating ready-to-ship relief mirror frames, decorative clocks, custom carved doors, windows, and sound-diffusing wall panels.",
     "heroSub": "Combining traditional architectural wood craftsmanship with state-of-the-art CNC technology. Ready-made products or tailored custom woodwork made to your exact dimensions.",
     "exploreProducts": "Explore Products",
     "requestCustom": "Request Custom Design",
@@ -114,8 +115,8 @@
     "getInTouch": "Get In Touch",
     "startYourWoodProject": "Start Your Wood Project",
     "contactDescription": "Visit our mill or reach out to our design studio for project inquiries, technical CAD assistance, or sample timber boxes.",
-    "studioAndMill": "TimberCraft CNC Studio & Mill",
-    "studioAddress": "450 Craft Mill Road, Industrial District 4",
+    "studioAndMill": "Hussain & Sons Wood CNC Craft",
+    "studioAddress": "Chak Shahzad, New Mall, Kuri Road, Near Madni Masjid, Islamabad, Pakistan",
     "directPhone": "Direct Phone",
     "phoneNumber": "+92 315 564 9733",
     "engineeringInquiries": "Engineering Inquiries",
@@ -128,5 +129,10 @@
     "subjectProjectType": "Subject / Project Type",
     "subjectPlaceholder": "e.g. Custom Dining Room Ceiling Panel Quote",
     "message": "Message",
-    "messagePlaceholder": "Tell us about dimensions, material preferences, or timelines..."
+    "messagePlaceholder": "Tell us about dimensions, material preferences, or timelines...",
+    "footerNav": "Navigation",
+    "footerPro": "Product Lines",
+    "millHours": "Mill Hours",
+    "weekTime": "Monday - Friday: 09:00 - 06:00",
+    "weekendTime": "Saturday (CAD Appts Only): 09:00 - 04:00"
 }
