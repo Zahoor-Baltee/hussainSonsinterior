@@ -79,7 +79,7 @@ export default function Header({ locale }: HeaderProps) {
         event: React.ChangeEvent<HTMLSelectElement>
     ) => {
         const newLocale = event.target.value as Locale;
-
+        document.cookie = `locale=${newLocale}; path=/; max-age=31536000`;
         const currentPathWithoutLocale =
             pathname.replace(`/${locale}`, "") || "";
 
