@@ -13,7 +13,7 @@ export default function ContactPage({ t }: ContactPageProps) {
 
                 {/* Info Side */}
                 <div className="lg:col-span-5 space-y-6">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-500">
+                    <span className="text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-500">
                         {t.getInTouch}
                     </span>
 
@@ -35,7 +35,7 @@ export default function ContactPage({ t }: ContactPageProps) {
                                     {t.studioAndMill}
                                 </span>
 
-                                <span className="text-stone-500">
+                                <span className="text-muted">
                                     {t.studioAddress}
                                 </span>
                             </div>
@@ -49,7 +49,7 @@ export default function ContactPage({ t }: ContactPageProps) {
                                     {t.directPhone}
                                 </span>
 
-                                <span className="text-stone-500">
+                                <span className="text-muted">
                                     {t.phoneNumber}
                                 </span>
                             </div>
@@ -63,7 +63,7 @@ export default function ContactPage({ t }: ContactPageProps) {
                                     {t.engineeringInquiries}
                                 </span>
 
-                                <span className="text-stone-500">
+                                <span className="text-muted">
                                     {t.contactEmail}
                                 </span>
                             </div>

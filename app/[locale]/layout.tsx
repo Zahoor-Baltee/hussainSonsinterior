@@ -74,7 +74,7 @@ export default async function LocaleLayout({
         <WhatsAppButton
           message="Hi, I would like to know more about your CNC woodworking products."
           label="WhatsApp"
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#1a8341] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"
         />
         <Footer locale={locale} />
       </body>

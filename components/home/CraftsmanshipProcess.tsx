@@ -25,7 +25,7 @@ const CraftsmanshipProcess = ({ locale }: CraftsmanshipProcessProps) => {
                             key={ps.step}
                             className="p-6 rounded-sm border relative bg-surface border-border"
                         >
-                            <span className="text-3xl font-serif font-bold text-primary/40 block mb-2">
+                            <span className="text-3xl font-serif font-bold text-primary block mb-2">
                                 {ps.step}
                             </span>
 

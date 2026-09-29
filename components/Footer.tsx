@@ -95,6 +95,7 @@ export default function Footer({ locale }: FooterProps) {
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
+                            className="w-auto h-12"
                         />
 
                         <p className="text-xs leading-relaxed text-footer-muted">
@@ -104,9 +105,9 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Quick Links */}
                     <div className="md:col-span-2 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                        <p className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
                             {content.footerNav}
-                        </h4>
+                        </p>
 
                         <ul className="space-y-2">
                             {NAV_ITEMS.map((link) => (
@@ -129,9 +130,9 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Categories */}
                     <div className="md:col-span-3 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                        <p className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
                             {content.footerPro}
-                        </h4>
+                        </p>
 
                         <ul className="space-y-2">
                             {CATEGORIES.map((category) => (
@@ -151,9 +152,9 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Business Contact */}
                     <div className="md:col-span-3 space-y-3">
-                        <h4 className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
+                        <p className="font-serif text-sm font-bold text-footer-foreground uppercase tracking-wider">
                             {content.millHours}
-                        </h4>
+                        </p>
 
                         <p className="text-xs text-footer-muted">
                             {content.weekTime}

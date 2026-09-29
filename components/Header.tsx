@@ -113,7 +113,12 @@ export default function Header({ locale }: HeaderProps) {
                     <div className="flex items-center gap-1">
                         <Globe className="w-3.5 h-3.5 text-primary" />
 
+                        <label htmlFor="language-select" className="sr-only">
+                            Select language
+                        </label>
+
                         <select
+                            id="language-select"
                             value={locale}
                             onChange={handleLanguageChange}
                             className="bg-transparent text-foreground cursor-pointer font-medium focus:outline-none"
@@ -168,6 +173,7 @@ export default function Header({ locale }: HeaderProps) {
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
+                            className="w-auto h-12"
                         />
                     </Link>
 

@@ -31,9 +31,9 @@ const Testimonials = ({ locale }: TestimonialsProps) => {
                             </p>
 
                             <div className="mt-6 pt-4 border-t border-border">
-                                <h4 className="font-serif text-sm font-bold text-foreground">
+                                <p className="font-serif text-sm font-bold text-foreground">
                                     {test.author}
-                                </h4>
+                                </p>
 
                                 <span className="text-[11px] text-primary">
                                     {locale === "ur" ? test.roleUr : test.role}

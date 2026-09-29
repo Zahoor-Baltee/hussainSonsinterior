@@ -62,23 +62,23 @@ const HeroSection = ({ locale }: HeroProps) => {
                         <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border">
 
                             <div>
-                                <h4 className="font-semibold text-sm flex items-center gap-1.5 text-primary">
+                                <p className="font-semibold text-sm flex items-center gap-1.5 text-primary">
                                     <Box className="w-4 h-4" />
                                     {content.readyMadePathTitle}
-                                </h4>
+                                </p>
 
-                                <p className="text-xs text-muted-foreground mt-1">
+                                <p className="text-xs text-muted mt-1">
                                     {content.readyMadePathDescription}
                                 </p>
                             </div>
 
                             <div>
-                                <h4 className="font-semibold text-sm flex items-center gap-1.5 text-primary">
+                                <p className="font-semibold text-sm flex items-center gap-1.5 text-primary">
                                     <Ruler className="w-4 h-4" />
                                     {content.customPathTitle}
-                                </h4>
+                                </p>
 
-                                <p className="text-xs text-muted-foreground mt-1">
+                                <p className="text-xs text-muted mt-1">
                                     {content.customPathDescription}
                                 </p>
                             </div>
@@ -89,11 +89,15 @@ const HeroSection = ({ locale }: HeroProps) => {
                     {/* Hero Visual Graphic */}
                     <div className="lg:col-span-5 relative">
 
-                        <div className="aspect-4/3 sm:aspect-square rounded-sm shadow-2xl overflow-hidden border border-border">
-                            {/* <CNCWoodGraphic
-                                pattern="radial"
-                            /> */}
-                            <Image src="/machine/m1.jpg" alt="CNC Wood machine working" fill className="object-cover" />
+                        <div className="relative aspect-4/3 sm:aspect-square rounded-sm shadow-2xl overflow-hidden border border-border">
+                            <Image
+                                src="/machine/m1.webp"
+                                alt="CNC Wood machine working"
+                                fill
+                                priority
+                                sizes="(max-width: 640px) 100vw, 50vw"
+                                className="object-cover"
+                            />
                         </div>
 
                         {/* Floating Metric Badge */}

@@ -34,8 +34,13 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                         >
                             {/* Graphic Box */}
                             <div className="aspect-4/3 relative overflow-hidden bg-surface-secondary">
-                                {/* <CNCWoodGraphic pattern={prod.bgSvg} /> */}
-                                <Image src={`/portfolio/${prod.image}`} alt={locale === "ur" ? prod.nameUr : prod.name} fill className="object-cover" />
+                                <Image
+                                    src={`/portfolio/${prod.image}`}
+                                    alt={locale === "ur" ? prod.nameUr : prod.name}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    className="object-cover"
+                                />
 
                                 <span className="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-primary text-primary-foreground rounded-xs shadow">
                                     {locale === "ur" ? prod.tagUr : prod.tag}
@@ -45,7 +50,7 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                             {/* Content */}
                             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                                 <div>
-                                    <div className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+                                    <div className="text-[11px] font-mono uppercase tracking-wider text-muted">
                                         {locale === "ur" ? prod.woodUr : prod.wood}
                                     </div>
 
@@ -60,7 +65,7 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
 
                                 <div className="pt-4 border-t border-border flex items-center justify-between">
                                     <div>
-                                        <span className="text-xs text-muted-foreground block">
+                                        <span className="text-xs text-muted block">
                                             {prod.startingAt}
                                         </span>
 

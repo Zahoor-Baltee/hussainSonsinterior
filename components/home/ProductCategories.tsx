@@ -46,7 +46,7 @@ const ProductCategories = ({ locale }: ProductCategoriesProps) => {
                                         <Icon className="w-6 h-6" />
                                     </div>
 
-                                    <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-surface-secondary text-muted-foreground">
+                                    <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-surface-secondary text-muted">
                                         {cat.count} {content.designs}
                                     </span>
                                 </div>

@@ -58,9 +58,9 @@ export default function ContactForm({ t }: ContactFormProps) {
 
     return (
         <div className="lg:col-span-7 p-8 rounded-sm border bg-surface border-border shadow-lg">
-            <h3 className="font-serif text-xl font-bold mb-6 text-foreground">
+            <p className="font-serif text-xl font-bold mb-6 text-foreground">
                 {t.sendMessage}
-            </h3>
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -75,6 +75,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                             type="text"
                             name="name"
                             required
+                            placeholder={t.namePlaceholder}
                             className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
                     </div>
@@ -87,6 +88,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                         <input
                             type="email"
                             name="email"
+                            placeholder={t.emailPlaceholder}
                             required
                             className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
@@ -104,6 +106,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                             type="tel"
                             name="phone"
                             required
+                            placeholder={t.phonePlaceholder}
                             className="w-full text-xs p-3 rounded-sm border bg-surface border-border text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                         />
                     </div>

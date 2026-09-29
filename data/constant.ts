@@ -8,7 +8,7 @@ export const CATEGORIES = [
         icon: Grid,
         count: 18,
         desc: "Intricately relief-carved accent and full-length wooden frames.",
-        image: "m1.jpg",
+        image: "m1.webp",
     },
     {
         id: "wall-clocks",
@@ -17,7 +17,7 @@ export const CATEGORIES = [
         icon: Clock,
         count: 12,
         desc: "Architectural clockworks combining natural timber grain & brass.",
-        image: "cl1.jpg",
+        image: "cl1.webp",
     },
     {
         id: "wooden-doors",
@@ -26,7 +26,7 @@ export const CATEGORIES = [
         icon: Box,
         count: 24,
         desc: "Heavy solid entry & interior doors with deep CNC geometric carving.",
-        image: "d2.jpg",
+        image: "d2.webp",
     },
     {
         id: "wooden-windows",
@@ -35,7 +35,7 @@ export const CATEGORIES = [
         icon: Layers,
         count: 15,
         desc: "Custom louvers, screens, and classic carved frame surrounds.",
-        image: "w1.jpg",
+        image: "w1.webp",
     },
     {
         id: "ceiling-designs",
@@ -44,7 +44,7 @@ export const CATEGORIES = [
         icon: Compass,
         count: 20,
         desc: "Coffered panels, geometric grilles, and backlighted ceiling layouts.",
-        image: "c1.jpg",
+        image: "c1.webp",
     },
     {
         id: "decorative-panels",
@@ -53,7 +53,7 @@ export const CATEGORIES = [
         icon: Sliders,
         count: 32,
         desc: "Acoustic & 3D carved partition walls, mashrabiya and fretwork.",
-        image: "p1.jpg",
+        image: "p1.webp",
     },
 ];
 
@@ -87,7 +87,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "radial",
         startingAt: "$640",
-        image: "m2.jpg",
+        image: "m2.webp",
     },
 
     {
@@ -119,7 +119,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "waves",
         startingAt: "$380",
-        image: "cl1.jpg",
+        image: "cl1.webp",
     },
 
     {
@@ -151,7 +151,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "lattice",
         startingAt: "$2,850",
-        image: "is2.jpg",
+        image: "is2.webp",
     },
 
     {
@@ -183,7 +183,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "parametric",
         startingAt: "$420 / m²",
-        image: "p2.jpg",
+        image: "p2.webp",
     },
 
     {
@@ -215,7 +215,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "rose",
         startingAt: "$1,150",
-        image: "c1.jpg",
+        image: "c1.webp",
     },
 
     {
@@ -247,7 +247,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "fretwork",
         startingAt: "$890",
-        image: "w1.jpg",
+        image: "w1.webp",
     },
 ];
 export const PROCESS_STEPS = [
@@ -300,7 +300,7 @@ export const FEATURED_WORKS = [
         location: "Private Residence, Zurich",
         locationUr: "نجی رہائش گاہ، زیورخ",
         pattern: "waves",
-        image: "p1.jpg",
+        image: "p1.webp",
     },
     {
         id: "geometric-lattice-double-entrance",
@@ -309,7 +309,7 @@ export const FEATURED_WORKS = [
         location: "Boutique Hotel, Dubai",
         locationUr: "بوتیک ہوٹل، دبئی",
         pattern: "lattice",
-        image: "d1.jpg",
+        image: "d1.webp",
     },
     {
         id: "backlit-hexagonal-ceiling-dome",
@@ -318,7 +318,7 @@ export const FEATURED_WORKS = [
         location: "Architectural Firm HQ",
         locationUr: "آرکیٹیکچرل فرم کا مرکزی دفتر",
         pattern: "rose",
-        image: "c1.jpg",
+        image: "c1.webp",
     },
 ];
 export const VALUE_PROPOSITIONS = [
@@ -472,7 +472,7 @@ export const GALLERY_ITEMS = [
         category: "Doors",
         categoryUr: "دروازے",
         pattern: "lattice",
-        image: "d2.jpg",
+        image: "d2.webp",
     },
     {
         id: "concentric-oak-ceiling-rose",
@@ -481,7 +481,7 @@ export const GALLERY_ITEMS = [
         category: "Ceilings",
         categoryUr: "چھتیں",
         pattern: "rose",
-        image: "c2.jpg"
+        image: "c2.webp"
     },
     {
         id: "fluid-wave-wall-diffuser",
@@ -490,7 +490,7 @@ export const GALLERY_ITEMS = [
         category: "Panels",
         categoryUr: "پینلز",
         pattern: "waves",
-        image: "p2.jpg"
+        image: "p2.webp"
     },
     {
         id: "radial-walnut-accent-mirror",
@@ -499,7 +499,7 @@ export const GALLERY_ITEMS = [
         category: "Mirrors",
         categoryUr: "آئینے",
         pattern: "radial",
-        image: "m2.jpg"
+        image: "m2.webp"
     },
     {
         id: "cedar-pierced-fretwork-screen",
@@ -508,7 +508,7 @@ export const GALLERY_ITEMS = [
         category: "Windows",
         categoryUr: "کھڑکیاں",
         pattern: "fretwork",
-        image: "w3.jpg"
+        image: "w3.webp"
     },
     {
         id: "parametric-acoustic-auditorium-wall",
@@ -517,7 +517,7 @@ export const GALLERY_ITEMS = [
         category: "Panels",
         categoryUr: "پینلز",
         pattern: "parametric",
-        image: "p3.jpg"
+        image: "p3.webp"
     },
 ];
 

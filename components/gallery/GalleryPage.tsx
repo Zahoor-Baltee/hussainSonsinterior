@@ -37,7 +37,7 @@ export default function GalleryPage({
                     >
                         {/* <CNCWoodGraphic pattern={item.pattern} /> */}
 
-                        <Image src={`/portfolio/${item.image}`} alt={locale === "ur" ? item.titleUr : item.title} fill className="object-cover" />
+                        <Image src={`/portfolio/${item.image}`} alt={locale === "ur" ? item.titleUr : item.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover " />
                         <div className="absolute inset-0 bg-stone-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                             <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400">
                                 {locale === "ur"
