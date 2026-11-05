@@ -30,8 +30,8 @@ export default function ContactForm({ t }: ContactFormProps) {
 
 
             await emailjs.send(
-                "service_0zrjpds",
-                "template_2mg39at",
+                "service_c16889r",
+                "template_hw19jt2",
                 {
                     name: data.name,
                     email: data.email,
@@ -40,7 +40,7 @@ export default function ContactForm({ t }: ContactFormProps) {
                     phone: data.phone,
                 },
                 {
-                    publicKey: "kCmRNovEbyNUXu2ql",
+                    publicKey: "oDegAYe6pyu0ThAU0",
                 }
             );
 

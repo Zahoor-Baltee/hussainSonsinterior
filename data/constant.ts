@@ -35,7 +35,7 @@ export const CATEGORIES = [
         icon: Layers,
         count: 15,
         desc: "Custom louvers, screens, and classic carved frame surrounds.",
-        image: "w1.webp",
+        image: "w4.webp",
     },
     {
         id: "ceiling-designs",
@@ -247,7 +247,7 @@ export const PRODUCTS = [
         ],
         bgSvg: "fretwork",
         startingAt: "0",
-        image: "w1.webp",
+        image: "w4.webp",
     },
 ];
 export const PROCESS_STEPS = [

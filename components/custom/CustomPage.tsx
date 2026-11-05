@@ -47,8 +47,8 @@ export default function CustomPage({
             // --------------------------------------------------
             if (hasProductAndCategory) {
                 await emailjs.send(
-                    "service_0zrjpds",
-                    "template_9ca0fnh",
+                    "service_c16889r",
+                    "template_9ovs2ds",
                     {
                         name,
                         email,
@@ -58,7 +58,7 @@ export default function CustomPage({
                         category,
                     },
                     {
-                        publicKey: "kCmRNovEbyNUXu2ql",
+                        publicKey: "oDegAYe6pyu0ThAU0",
                     }
                 );
 
