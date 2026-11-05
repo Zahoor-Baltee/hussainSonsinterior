@@ -1,7 +1,6 @@
 import { Locale } from '@/config/locales';
 import { PRODUCTS } from '@/data/constant';
 import { getContent } from '@/lib/i18n';
-import { CNCWoodGraphic } from './CNCWoodGraphic';
 import Link from 'next/link';
 import Image from 'next/image';
 type ReadyMadeProductsProps = {
@@ -64,7 +63,7 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                                 </div>
 
                                 <div className="pt-4 border-t border-border flex items-center justify-between">
-                                    <div>
+                                    {/* <div>
                                         <span className="text-xs text-muted block">
                                             {prod.startingAt}
                                         </span>
@@ -72,7 +71,7 @@ const ReadyMadeProducts = ({ locale }: ReadyMadeProductsProps) => {
                                         <span className="text-xl font-serif font-bold text-primary">
                                             {prod.price}
                                         </span>
-                                    </div>
+                                    </div> */}
 
                                     <Link
                                         href={`/${locale}/products/item/${prod.id}`}

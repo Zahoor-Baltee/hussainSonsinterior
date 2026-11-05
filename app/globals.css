@@ -26,6 +26,7 @@
   --accent-foreground: #FFFFFF;
 
   --success: #4F6F52;
+  --success: #4f6e6f;
   --danger: #A64B43;
 
   --footer: #292622;
@@ -57,6 +58,7 @@
   --accent-foreground: #1C1A17;
 
   --success: #789B7A;
+  --info: #78919b;
   --danger: #D2766D;
 
   --footer: #151311;
@@ -92,6 +94,7 @@
   --color-footer-border: var(--footer-border);
 
   --color-success: var(--success);
+  --color-info: var(--info);
   --color-danger: var(--danger);
 
   --font-sans: var(--font-geist-sans);

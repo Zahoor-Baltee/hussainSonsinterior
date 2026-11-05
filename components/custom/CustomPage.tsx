@@ -4,11 +4,16 @@ import { Sliders } from "lucide-react";
 import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { supabase } from "@/lib/supabase";
+import Alert from "../Alert";
 type CustomPageProps = {
     locale: string;
     t: any;
     product?: string;
     category?: string
+};
+type AlertState = {
+    type: "success" | "danger" | "info";
+    message: string;
 };
 export default function CustomPage({
     locale,
@@ -18,7 +23,7 @@ export default function CustomPage({
 }: CustomPageProps) {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-
+    const [alert, setAlert] = useState<AlertState | null>(null);
 
 
     const hasProductAndCategory =
@@ -62,8 +67,10 @@ export default function CustomPage({
                     }
                 );
 
-                alert("Email sent successfully!");
-
+                setAlert({
+                    type: "success",
+                    message: "Your message has been sent successfully.",
+                });
                 form.reset();
 
                 return;
@@ -93,13 +100,21 @@ export default function CustomPage({
 
                 // 10 MB limit
                 if (file.size > 10 * 1024 * 1024) {
-                    alert("File size must be less than 10 MB.");
+
+                    setAlert({
+                        type: "danger",
+                        message: "File size must be less than 10 MB.",
+                    });
                     return;
                 }
 
                 // File type validation
                 if (!allowedTypes.includes(file.type)) {
-                    alert("Only JPG, PNG, and PDF files are allowed.");
+
+                    setAlert({
+                        type: "danger",
+                        message: "Only JPG, PNG, and PDF files are allowed.",
+                    });
                     return;
                 }
 
@@ -149,16 +164,23 @@ export default function CustomPage({
                 }
             );
 
-            alert("Email sent successfully!");
+            setAlert({
+                type: "success",
+                message: "Your woodworking request has been submitted successfully.",
+            });
 
             form.reset();
             setSelectedFile(null);
         } catch (error) {
             console.error("Error submitting contact form:", error);
 
-            alert(
-                "Something went wrong while submitting your request. Please try again."
-            );
+            setAlert({
+                type: "danger",
+                message:
+                    error instanceof Error
+                        ? error.message
+                        : "Something went wrong. Please try again.",
+            });
         } finally {
             setIsLoading(false);
         }
@@ -366,6 +388,12 @@ export default function CustomPage({
                     </button>
                 </form>
             </div>
+            <Alert
+                open={!!alert}
+                type={alert?.type}
+                message={alert?.message ?? ""}
+                onClose={() => setAlert(null)}
+            />
         </main>
     );
 }

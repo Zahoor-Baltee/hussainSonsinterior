@@ -74,8 +74,8 @@ export default function ProductsPage({
                         <button
                             onClick={() => setSelectedCategory("all")}
                             className={`shrink-0 text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded-sm font-medium whitespace-nowrap transition-colors ${selectedCategory === "all"
-                                    ? "bg-primary text-primary-foreground"
-                                    : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
                                 }`}
                         >
                             {t.all}
@@ -86,8 +86,8 @@ export default function ProductsPage({
                                 key={cat.id}
                                 href={`/${locale}/products/${cat.id}`}
                                 className={`shrink-0 text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded-sm font-medium whitespace-nowrap transition-colors ${selectedCategory === cat.id
-                                        ? "bg-primary text-primary-foreground"
-                                        : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
+                                    ? "bg-primary text-primary-foreground"
+                                    : "bg-secondary text-secondary-foreground hover:bg-surface-secondary"
                                     }`}
                             >
                                 {locale === "ur" ? cat.nameUr : cat.name}
@@ -230,7 +230,7 @@ export default function ProductsPage({
                                     <div className="mt-auto px-4 pb-4 sm:px-5 sm:pb-5 lg:px-6 lg:pb-6">
                                         <div className="flex items-center justify-between gap-3">
                                             <span className="min-w-0 truncate text-lg sm:text-xl font-serif font-bold text-primary">
-                                                {prod.price}
+                                                {/* {prod.price} */}
                                             </span>
 
                                             <Link

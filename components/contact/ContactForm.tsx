@@ -3,14 +3,19 @@
 import { FormEvent, useState } from "react";
 import { Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import Alert from "../Alert";
 
 
 type ContactFormProps = {
     t: ReturnType<typeof import("@/lib/i18n").getContent>;
 };
-
+type AlertState = {
+    type: "success" | "danger" | "info";
+    message: string;
+};
 export default function ContactForm({ t }: ContactFormProps) {
     const [isLoading, setIsLoading] = useState(false);
+    const [alert, setAlert] = useState<AlertState | null>(null);
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -43,13 +48,23 @@ export default function ContactForm({ t }: ContactFormProps) {
                     publicKey: "oDegAYe6pyu0ThAU0",
                 }
             );
+            setAlert({
+                type: "success",
+                message: "Your message has been sent successfully.",
+            });
 
-            alert("Email sent successfully!");
 
             // Reset form after successful email
             form.reset();
 
         } catch (error) {
+            setAlert({
+                type: "danger",
+                message:
+                    error instanceof Error
+                        ? error.message
+                        : "Something went wrong. Please try again.",
+            });
             console.error("Error submitting contact form:", error);
         } finally {
             setIsLoading(false);
@@ -155,6 +170,12 @@ export default function ContactForm({ t }: ContactFormProps) {
                 </button>
 
             </form>
+            <Alert
+                open={!!alert}
+                type={alert?.type}
+                message={alert?.message ?? ""}
+                onClose={() => setAlert(null)}
+            />
         </div>
     );
 }

@@ -97,7 +97,7 @@ export default async function ProductDetailPage({
                         </h1>
 
                         <div className="text-2xl font-serif font-bold text-primary mt-2">
-                            {product.price}
+                            {/* {product.price} */}
                         </div>
                     </div>
 
