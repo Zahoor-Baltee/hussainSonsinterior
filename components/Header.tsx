@@ -98,7 +98,7 @@ export default function Header({ locale }: HeaderProps) {
 
                     <span className="hidden sm:flex items-center gap-1.5">
                         <Mail className="w-3.5 h-3.5 text-primary" />
-                        craft@cncwoodwork.com
+                        hscarving@gmail.com
                     </span>
 
                     <span className="hidden md:flex items-center gap-1.5">
