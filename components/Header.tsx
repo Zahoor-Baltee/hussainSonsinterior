@@ -169,11 +169,11 @@ export default function Header({ locale }: HeaderProps) {
                         className="flex items-center gap-3 cursor-pointer group"
                     >
                         <Image
-                            src="/hussain-sons-v2.png"
+                            src="/hs.png"
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
-                            className="w-auto h-12"
+                            className="w-auto h-16"
                         />
                     </Link>
 
