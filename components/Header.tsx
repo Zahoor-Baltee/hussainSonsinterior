@@ -44,7 +44,7 @@ export default function Header({ locale }: HeaderProps) {
     const router = useRouter();
 
     const content = getContent(locale);
-
+const logourl = darkMode?"/hs-dark.png":"/hs-light.png"
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
 
@@ -169,11 +169,11 @@ export default function Header({ locale }: HeaderProps) {
                         className="flex items-center gap-3 cursor-pointer group"
                     >
                         <Image
-                            src="/hs.png"
+                            src={logourl}
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
-                            className="w-auto h-16"
+                            className="w-auto h-14"
                         />
                     </Link>
 

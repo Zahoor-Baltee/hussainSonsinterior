@@ -91,11 +91,11 @@ export default function Footer({ locale }: FooterProps) {
                     {/* Brand Intro */}
                     <div className="md:col-span-4 space-y-4">
                         <Image
-                            src="/hussain-sons-v2.png"
+                            src="/hs-dark.png"
                             alt="Hussain & Sons Logo"
                             width={200}
                             height={50}
-                            className="w-auto h-12"
+                            className="w-auto h-14"
                         />
 
                         <p className="text-xs leading-relaxed text-footer-muted">
