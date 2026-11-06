@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Roboto } from "next/font/google";
 import { notFound } from "next/navigation";
-
+import { Analytics } from '@vercel/analytics/next';
 import "../globals.css";
 import { isValidLocale } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -71,6 +71,7 @@ export default async function LocaleLayout({
         <Header locale={locale} />
         <Breadcrumb locale={locale} />
         {children}
+        <Analytics />
         <WhatsAppButton
           message="Hi, I would like to know more about your CNC woodworking products."
           label="WhatsApp"
